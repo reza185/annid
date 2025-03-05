@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+
+<!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/admin-setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Jan 2025 11:13:07 GMT -->
+<head>
+	<title>سایت آموزشگاهی آنید</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="">
+	<meta name="description" content="Eduport - قالب HTML دوره آنلاین و آموزش">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+
+</head>
+
+<body>
+
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- Sidebar START -->
+<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
+
+	<!-- Navbar brand for xl START -->
+	<div class="d-flex align-items-center">
+		<a class="navbar-brand" href="index.html">
+			<img class="navbar-brand-item" src="assets/images/logo-dark.png" alt="">
+		</a>
+	</div>
+	<!-- Navbar brand for xl END -->
+	
+	<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
+		<div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
+
+			<!-- Sidebar menu START -->
+			<ul class="navbar-nav flex-column" id="navbar-sidebar">
+				
+				<!-- Menu item 1 -->
+				<li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i class="bi bi-house fa-fw me-2"></i>داشبورد</a></li>
+				
+				<!-- Title -->
+				<li class="nav-item ms-2 my-2">صفحات</li>
+
+				<!-- menu item 2 -->
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded="false" aria-controls="collapsepage">
+						<i class="bi bi-basket fa-fw me-2"></i>دوره ها
+					</a>
+					<!-- Submenu -->
+					<ul class="nav collapse flex-column" id="collapsepage" data-bs-parent="#navbar-sidebar">
+						<li class="nav-item"> <a class="nav-link" href="admin-course-list.html">لیست</a></li>
+						<li class="nav-item"> <a class="nav-link" href="admin-course-category.html">دسته بندی</a></li>
+						<li class="nav-item"> <a class="nav-link" href="admin-course-detail.html">جزئیات</a></li>
+					</ul>
+				</li>
+
+				<!-- Menu item 3 -->
+				<li class="nav-item"> <a class="nav-link" href="admin-student-list.html"><i class="fas fa-user-graduate fa-fw me-2"></i>هنرجویان</a></li>
+
+				<!-- Menu item 4 -->
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
+						<i class="fas fa-user-tie fa-fw me-2"></i>مدرس
+					</a>
+					<!-- Submenu -->
+					<ul class="nav collapse flex-column" id="collapseinstructors" data-bs-parent="#navbar-sidebar">
+						<li class="nav-item"> <a class="nav-link" href="admin-instructor-list.html">لیست</a></li>
+						<li class="nav-item"> <a class="nav-link" href="admin-instructor-detail.html">جزئیات</a></li>
+						<li class="nav-item"> 
+							<a class="nav-link" href="admin-instructor-request.html">درخواست ها
+								<span class="badge text-bg-success rounded-circle ms-2">2</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<!-- Menu item 5 -->
+				<li class="nav-item"> <a class="nav-link" href="admin-review.html"><i class="far fa-comment-dots fa-fw me-2"></i>دیدگاه ها</a></li>
+
+				<!-- Menu item 6 -->
+				<li class="nav-item"> <a class="nav-link" href="admin-earning.html"><i class="far fa-chart-bar fa-fw me-2"></i>درآمدها</a></li>
+
+				<!-- Menu item 7 -->
+				<li class="nav-item"> <a class="nav-link" href="admin-setting.html"><i class="fas fa-user-cog fa-fw me-2"></i>تنظیمات</a></li>
+
+				<!-- Menu item 8 -->
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
+						<i class="bi bi-lock fa-fw me-2"></i>احراز هویت
+					</a>
+					<!-- Submenu -->
+					<ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
+						<li class="nav-item"> <a class="nav-link" href="sign-up.html">ثبت نام</a></li>
+						<li class="nav-item"> <a class="nav-link" href="sign-in.html">ورود</a></li>
+						<li class="nav-item"> <a class="nav-link" href="forgot-password.html">فراموشی رمز عبور</a></li>
+						<li class="nav-item"> <a class="nav-link" href="admin-error-404.html">صفحه 404</a></li>
+					</ul>
+				</li>
+
+				<!-- Menu item 9 -->
+				<!-- <li class="nav-item"> <a class="nav-link" href="docs/index.html"><i class="far fa-clipboard fa-fw me-2"></i>کدهای کاربردی</a></li> -->
+
+			</ul>
+			<!-- Sidebar menu end -->
+
+			<!-- Sidebar footer START -->
+			<div class="px-3 mt-auto pt-3">
+				<div class="d-flex align-items-center justify-content-between text-primary-hover">
+						<a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip" data-bs-placement="top" title="تنظیمات">
+							<i class="bi bi-gear-fill"></i>
+						</a>
+						<a class="h5 mb-0 text-body" href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="صفحه اصلی">
+							<i class="bi bi-globe"></i>
+						</a>
+						<a class="h5 mb-0 text-body" href="sign-in.html" data-bs-toggle="tooltip" data-bs-placement="top" title="خروج">
+							<i class="bi bi-power"></i>
+						</a>
+				</div>
+			</div>
+			<!-- Sidebar footer END -->
+			
+		</div>
+	</div>
+</nav>
+<!-- Sidebar END -->
+
+<!-- Page content START -->
+<div class="page-content">
+
+	<!-- Top bar START -->
+	<nav class="navbar top-bar navbar-light border-bottom py-0 py-xl-3">
+		<div class="container-fluid p-0">
+			<div class="d-flex align-items-center w-100">
+
+				<!-- Logo START -->
+				<div class="d-flex align-items-center d-xl-none">
+					<a class="navbar-brand" href="index.html">
+						<img class="light-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile.svg" alt="">
+						<img class="dark-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile-light.svg" alt="">
+					</a>
+				</div>
+				<!-- Logo END -->
+
+				<!-- Toggler for sidebar START -->
+				<div class="navbar-expand-xl sidebar-offcanvas-menu">
+					<button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="outside">
+						<i class="bi bi-text-right fa-fw h2 lh-0 mb-0 rtl-flip" data-bs-target="#offcanvasMenu"> </i>
+					</button>
+				</div>
+				<!-- Toggler for sidebar END -->
+				
+				<!-- Top bar left -->
+				<div class="navbar-expand-lg ms-auto ms-xl-0">
+					
+					<!-- Toggler for menubar START -->
+					<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopContent" aria-controls="navbarTopContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+					<!-- Toggler for menubar END -->
+
+					<!-- Topbar menu START -->
+					<div class="collapse navbar-collapse w-100" id="navbarTopContent">
+						<!-- Top search START -->
+						<div class="nav my-3 my-xl-0 flex-nowrap align-items-center">
+							<div class="nav-item w-100">
+								<form class="position-relative">
+									<input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="جستجو..." aria-label="Search">
+									<button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 text-primary"></i></button>
+								</form>
+							</div>
+						</div>
+						<!-- Top search END -->
+					</div>
+					<!-- Topbar menu END -->
+				</div>
+				<!-- Top bar left END -->
+				
+				<!-- Top bar right START -->
+				<div class="ms-xl-auto">
+					<ul class="navbar-nav flex-row align-items-center">
+
+						<!-- Notification dropdown START -->
+						<li class="nav-item ms-2 ms-md-3 dropdown">
+							<!-- Notification button -->
+							<a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+								<i class="bi bi-bell fa-fw"></i>
+							</a>
+							<!-- Notification dote -->
+							<span class="notif-badge animation-blink"></span>
+
+							<!-- Notification dropdown menu START -->
+							<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
+								<div class="card bg-transparent">
+									<div class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
+										<h6 class="m-0">پیام ها <span class="badge bg-danger bg-opacity-10 text-danger ms-2">2 پیام جدید</span></h6>
+								<a class="small" href="#">حذف همه</a>
+							</div>
+							<div class="card-body p-0">
+								<ul class="list-group list-unstyled list-group-flush">
+									<!-- Notif item -->
+									<li>
+										<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
+											<div class="me-3">
+												<div class="avatar avatar-md">
+													<img class="avatar-img rounded-circle" src="assets/images/avatar/08.jpg" alt="avatar">
+												</div>
+											</div>
+											<div>
+												<p class="text-body small m-0">به  <b> مهرداد قربانی </b> برای فارغ التحصیلی از <b>دانشگاه دماوند </b>تبریک میگوییم.</p>
+												<u class="small">پیام تبریک</u>
+											</div>
+										</a>
+									</li>
+	
+									<!-- Notif item -->
+									<li>
+										<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
+											<div class="me-3">
+												<div class="avatar avatar-md">
+													<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+												</div>
+											</div>
+											<div>
+												<h6 class="mb-1">افزودن دوره جدید</h6>
+												<p class="small text-body m-0">با ویژگی های جدید آشنا شوید...</p>
+												<u class="small">مشاهده</u>
+											</div>
+										</a>
+									</li>
+	
+									<!-- Notif item -->
+									<li>
+										<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
+											<div class="me-3">
+												<div class="avatar avatar-md">
+													<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+												</div>
+											</div>
+											<div>
+												<h6 class="mb-1">درخواست جدید برای درخواست مربی</h6>
+												<u class="small">مشاهده</u>
+											</div>
+										</a>
+									</li>
+	
+									<!-- Notif item -->
+									<li>
+										<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
+											<div class="me-3">
+												<div class="avatar avatar-md">
+													<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+												</div>
+											</div>
+											<div>
+												<h6 class="mb-1">به روز رسانی نسخه 2.3</h6>
+												<p class="small text-body m-0">با ویژگی های جدید آشنا شوید...</p>
+												<small class="text-body">5 دقیقه پیش</small>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Button -->
+							<div class="card-footer bg-transparent border-0 py-3 text-center position-relative">
+								<a href="#" class="stretched-link">مشاهده تمام فعالیت ها</a>
+							</div>
+						</div>
+					</div>
+					<!-- Notification dropdown menu END -->
+				</li>
+				<!-- Notification dropdown END -->
+
+				<!-- Profile dropdown START -->
+				<li class="nav-item ms-3 dropdown">
+					<!-- Avatar -->
+					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
+					</a>
+
+					<!-- Profile dropdown START -->
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+						<!-- Profile info -->
+						<li class="px-3 mb-3">
+							<div class="d-flex align-items-center">
+								<!-- Avatar -->
+								<div class="avatar me-3">
+									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
+								</div>
+								<div>
+									<a class="h6" href="#">الهام حسینی</a>
+								<p class="small m-0">example@gmail.com</p>
+							</div>
+						</div>
+					</li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Links -->
+					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>ویرایش</a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>تنظیمات</a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>پشتیبانی</a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Dark mode options START -->
+					<li>
+						<div class="bg-light dark-mode-switch theme-icon-active d-flex align-items-center p-1 rounded mt-2">
+							<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="light">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+									<use href="#"></use>
+								</svg> روشن
+							</button>
+							<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+									<use href="#"></use>
+								</svg> تیره
+							</button>
+							<button type="button" class="btn btn-sm mb-0 active" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+									<use href="#"></use>
+								</svg> خودکار
+										</button>
+									</div>
+								</li> 
+								<!-- Dark mode options END-->
+							</ul>
+							<!-- Profile dropdown END -->
+						</li>
+						<!-- Profile dropdown END -->
+					</ul>
+				</div>
+				<!-- Top bar right END -->
+			</div>
+		</div>
+	</nav>
+	<!-- Top bar END -->
+
+	<!-- Page main content START -->
+	<div class="page-content-wrapper border">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 mb-3">
+				<h1 class="h3 mb-2 mb-sm-0 fs-4">تنظیمات</h1>
+			</div>
+		</div>
+
+		<div class="row g-4">
+			<!-- Left side START -->
+			<div class="col-xl-3">
+				<!-- Tab START -->
+				<ul class="nav nav-pills nav-tabs-bg-dark flex-column">
+					<li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#tab-1"><i class="fas fa-globe fa-fw me-2"></i>وبسایت</a> </li>
+					<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-2"><i class="fas fa-cog fa-fw me-2"></i>عمومی</a> </li>
+					<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-3"><i class="fas fa-bell fa-fw me-2"></i>نوتیفیکیشن</a> </li>
+					<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-4"><i class="fas fa-user-circle fa-fw me-2"></i>پروفایل</a> </li>
+					<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-5"><i class="fas fa-sliders-h fa-fw me-2"></i>شبکه های اجتماعی</a> </li>
+					<li class="nav-item"> <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-6"><i class="fas fa-envelope-open-text fa-fw me-2"></i>ایمیل</a> </li>
+				</ul>
+				<!-- Tab END -->
+			</div>
+			<!-- Left side END -->
+
+			<!-- Right side START -->
+			<div class="col-xl-9">
+
+				<!-- Tab Content START -->
+				<div class="tab-content">
+
+					<!-- Personal Information content START -->
+					<div class="tab-pane show active" id="tab-1">
+						<div class="card shadow">
+
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">وبسایت</h5>
+							</div>
+
+							<!-- Card body START -->
+							<div class="card-body">
+								<form class="row g-4 align-items-center">
+		
+									<!-- Input item -->
+									<div class="col-lg-4">
+										<label class="form-label">نام</label>
+										<input type="text" class="form-control" placeholder="rtltheme">
+										<div class="form-text">ورود نام وبسایت</div>
+									</div>
+
+									<!-- Input item -->
+									<div class="col-lg-4">
+										<label class="form-label">کپی رایت</label>
+										<input type="text" class="form-control" placeholder="rtltheme">
+										<div class="form-text">استفاده برای تماس و ارسال ایمیل</div>
+									</div>
+
+									<!-- Input item -->
+									<div class="col-lg-4">
+										<label class="form-label">ایمیل</label>
+										<input type="email" class="form-control" placeholder="xxxx@gmail.com">
+										<div class="form-text">برای کپی رایت سایت</div>
+									</div>
+		
+									<!-- Textarea item -->
+									<div class="col-12">
+										<label class="form-label">توضیحات</label>
+										<textarea class="form-control" rows="3"></textarea>
+										<div class="form-text">برای نوشتن شرح مختصری از شرکت یا وبسایت</div> 
+									</div>
+
+									<!-- Input item -->
+									<div class="col-lg-6">
+										<label class="form-label">شماره تماس</label>
+										<input type="text" class="form-control" placeholder="0930000000">
+										<div class="form-text">استفاده برای تماس و پشتیبانی</div>
+									</div>
+
+									<!-- Input item -->
+									<div class="col-lg-6">
+										<label class="form-label">ایمیل پشتیبانی</label>
+										<input type="email" class="form-control" placeholder="xxxx@gmail.com">
+										<div class="form-text">برای ارسال تیکت</div>
+									</div>
+
+									<!-- Radio items -->
+									<div class="col-lg-6">
+										<label class="form-label">ثبت نام</label>
+										<div class="d-sm-flex">
+											<!-- Radio -->
+											<div class="form-check radio-bg-light me-4">
+												<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+												<label class="form-check-label" for="flexRadioDefault1">
+													فعال
+												</label>
+											</div>
+										<!-- Radio -->
+											<div class="form-check radio-bg-light me-4">
+												<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+												<label class="form-check-label" for="flexRadioDefault2">
+													غیرفعال
+												</label>
+											</div>
+										<!-- Radio -->
+											<div class="form-check radio-bg-light">
+												<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+												<label class="form-check-label" for="flexRadioDefault3">
+													ارسال ایمیل
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<!-- Textarea item -->
+									<div class="col-12">
+										<label class="form-label">آدرس مرکزی</label>
+										<textarea class="form-control" rows="3"></textarea>
+										<div class="form-text">آدرس دفتر مرکزی شرکت</div> 
+									</div>
+		
+									<!-- Save button -->
+									<div class="d-sm-flex justify-content-end">
+										<button type="button" class="btn btn-primary mb-0">ذخیره</button>
+									</div>
+								</form>
+							</div>
+							<!-- Card body END -->
+
+						</div>			
+					</div>
+					<!-- Personal Information content END -->
+
+					<!-- General Settings content START -->
+					<div class="tab-pane" id="tab-2">
+
+						<div class="card shadow">
+
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">عمومی</h5>
+							</div>
+
+							<!-- Card body START -->
+							<div class="card-body">
+								<form class="row g-4">
+
+									<!-- Input item -->
+									<div class="col-12">
+										<label class="form-label">آدرس وبسایت</label>
+										<input type="text" class="form-control" placeholder="rtl-theme.com">
+										<div class="form-text">ورود آدرس وبسایت شرکت</div>
+									</div>
+
+									<!-- Choice item -->
+									<div class="col-lg-6">
+										<label class="form-label">انتخاب واحد پول</label>
+										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
+											<option value="">انتخاب</option>
+											<option>USD</option>
+											<option>Rupee</option>
+											<option>Euro</option>
+											<option>Pound</option>
+										</select>
+										<div class="form-text">انتخاب واحد پول براساس کشور</div>
+									</div>
+
+									<!-- Choice item -->
+									<div class="col-lg-6">
+										<label class="form-label">انتخاب زبان</label>
+										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
+											<option value="">زبان</option>
+											<option>انگلیسی</option>
+											<option>فارسی</option>
+											<option>آلمانی</option>
+											<option>اسپانیایی</option>
+										</select>
+										<div class="form-text">انتخاب زبان براساس کشور</div>
+									</div>
+
+									<!-- Switch item -->
+									<div class="col-lg-3">
+										<label class="form-label">نمایش وضعیت</label>
+										<div class="form-check form-switch form-check-lg mb-0">
+											<input class="form-check-input mt-0 price-toggle me-2" type="checkbox" id="flexSwitchCheckDefault">
+											<label class="form-check-label mt-1" for="flexSwitchCheckDefault">آفلاین</label>
+										</div>
+									</div>
+		
+									<!-- Textarea item -->
+									<div class="col-lg-9">
+										<label class="form-label">توضیحات</label>
+										<textarea class="form-control" rows="3"></textarea>
+										<div class="form-text">ورود ادمین<a href="#" class="ms-2">http://example.xyz/admin/login</a></div> 
+									</div>
+		
+									<!-- Save button -->
+									<div class="d-sm-flex justify-content-end">
+										<button type="button" class="btn btn-primary mb-0">ذخیره</button>
+									</div>
+								</form>
+							</div>
+							<!-- Card body END -->
+
+						</div>
+					</div>
+					<!-- General Settings content END -->
+
+					<!-- Notification setting content START -->
+					<div class="tab-pane" id="tab-3">
+						<!-- Notification START -->
+						<div class="card shadow">
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">نوتیفیکیشن</h5>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body">
+								<!-- General nofification -->
+								<h6 class="mb-2">نوع اعلان هایی را که می خواهید دریافت کنید انتخاب کنید</h6>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy12" checked="">
+									<label class="form-check-label" for="checkPrivacy12">برداشت پول</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy2">
+									<label class="form-check-label" for="checkPrivacy2">گزارش هفتگی</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy3" checked="">
+									<label class="form-check-label" for="checkPrivacy3">تغییر رمز عبور</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-0">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy4">
+									<label class="form-check-label" for="checkPrivacy4">تبلیغات و تخفیفات</label>
+								</div>
+
+								<!-- Instructor notification -->
+								<h6 class="mb-2 mt-4">اطلاعیه مربوط به مدرس</h6>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy11" checked="">
+									<label class="form-check-label" for="checkPrivacy5">مربیان جدید</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy5">
+									<label class="form-check-label" for="checkPrivacy5">زمانی که مدرسان دوره های جدید اضافه کردند، اطلاع دهید</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy6" checked="">
+									<label class="form-check-label" for="checkPrivacy6">هنگامی که مدرسان دوره ها را به روز می کنند، اطلاع دهید</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-0">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy7">
+									<label class="form-check-label" for="checkPrivacy7">گزارش هفتگی دوره</label>
+								</div>
+
+								<!-- Student notification -->
+								<h6 class="mb-2 mt-4">اطلاعیه مربوط به هنرجویان</h6>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy8" checked="">
+									<label class="form-check-label" for="checkPrivacy8">هنرجویان جدید</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-3">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy9">
+									<label class="form-check-label" for="checkPrivacy9">هنگامی که دانش آموزان دوره های جدید را خریداری می کنند، اطلاع دهید</label>
+								</div>
+								<div class="form-check form-switch form-check-md mb-0">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy10">
+									<label class="form-check-label" for="checkPrivacy10">گزارش هفتگی دوره</label>
+								</div>
+							</div>
+						</div>
+						<!-- Notification START -->
+					</div>
+					<!-- Notification setting content END -->
+
+					<!-- Account setting content START -->
+					<div class="tab-pane" id="tab-4">
+						<!-- Activity logs -->
+						<div class="bg-light rounded-3 p-4 mb-3">
+							<div class="d-md-flex justify-content-between align-items-center">
+								<!-- Content -->
+								<div>
+									<h6 class="h5">گزارش فعالیت ها</h6>
+									<p class="mb-1 mb-md-0">می توانید تمام گزارش های فعالیت خود از جمله فعالیت غیرمعمول شناسایی شده را ذخیره کنید.</p>
+								</div>
+								<!-- Switch -->
+								<div class="form-check form-switch form-check-md mb-0">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy1" checked>
+								</div>
+							</div>
+						</div>
+
+						<!-- Change password -->
+						<div class="bg-light rounded-3 p-4 mb-3">
+							<div class="d-md-flex justify-content-between align-items-center">
+								<!-- Content -->
+								<div>
+									<h6 class="h5">تغییر رمز عبور</h6>
+									<p class="mb-1 mb-md-0">یک رمز عبور منحصر به فرد برای محافظت از حساب خود تنظیم کنید.</p>
+								</div>
+								<!-- Button -->
+								<div>
+									<a href="#" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#changePassword">تغییر رمز عبور</a>
+									<p class="mb-0 small h6">آخرین تغییر 10 خرداد 1400</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- 2 Step Verification -->
+						<div class="bg-light rounded-3 p-4">
+							<div class="d-md-flex justify-content-between align-items-center">
+								<!-- Content -->
+								<div>
+									<h6 class="h5">تایید دو مرحله ای</h6>
+									<p class="mb-1 mb-md-0">حساب خود را با امنیت ۲ مرحله ای ایمن کنید. هنگامی که فعال شد، نه تنها رمز عبور خود، بلکه یک کد خاص را نیز با استفاده از برنامه باید وارد کنید. شما می توانید این کد را در اپلیکیشن موبایل دریافت کنید.</p>
+								</div>
+								<!-- Switch -->
+								<div class="form-check form-switch form-check-md mb-0">
+									<input class="form-check-input" type="checkbox" id="checkPrivacy13" checked>
+								</div>
+							</div>
+						</div>
+
+						<!-- Active Logs START -->
+						<div class="card border mt-4">
+
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">لاگ فعالیت</h5>
+							</div>
+
+							<!-- Card body START -->
+							<div class="card-body">
+								<!-- Table START -->
+								<div class="table-responsive border-0">
+									<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+
+										<!-- Table head -->
+										<thead>
+											<tr>
+												<th scope="col" class="border-0 rounded-start">مرورگر</th>
+												<th scope="col" class="border-0">IP</th>
+												<th scope="col" class="border-0">زمان</th>
+												<th scope="col" class="border-0 rounded-end">فعالیت</th>
+											</tr>
+										</thead>
+		
+										<!-- Table body START -->
+										<tbody>
+
+											<!-- Table row -->
+											<tr>
+												<!-- Table data -->
+												<td>Chrome با ویندوز</td>
+		
+												<!-- Table data -->
+												<td>173.238.198.108</td>
+		
+												<!-- Table data -->
+												<td>12 مرداد 1400</td>
+		
+												<!-- Table data -->
+												<td>
+													<button class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0">خروج</button>
+												</td>
+											</tr>
+
+											<!-- Table row -->
+											<tr>
+												<!-- Table data -->
+												<td>Mozilla با ویندوز</td>
+		
+												<!-- Table data -->
+												<td>107.222.146.90</td>
+		
+												<!-- Table data -->
+												<td>08 تیر 1400</td>
+		
+												<!-- Table data -->
+												<td>
+													<button class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0">خروج</button>
+												</td>
+											</tr>
+
+											<!-- Table row -->
+											<tr>
+												<!-- Table data -->
+												<td>Chrome با iMac</td>
+		
+												<!-- Table data -->
+												<td>231.213.125.55</td>
+		
+												<!-- Table data -->
+												<td>06 مرداد 1400</td>
+		
+												<!-- Table data -->
+												<td>
+													<button class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0">خروج</button>
+												</td>
+											</tr>
+
+											<!-- Table row -->
+											<tr>
+												<!-- Table data -->
+												<td>Mozilla با ویندوز</td>
+		
+												<!-- Table data -->
+												<td>37.242.105.138</td>
+		
+												<!-- Table data -->
+												<td>02 آذر 1400</td>
+		
+												<!-- Table data -->
+												<td>
+													<button class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0">خروج</button>
+												</td>
+											</tr>
+		
+
+										</tbody>
+										<!-- Table body END -->
+									</table>
+								</div>
+								<!-- Table END -->
+							</div>
+							<!-- Card body END -->
+						</div>
+						<!-- Active Logs END -->
+					</div>
+					<!-- Account setting content END -->
+
+					<!-- Social Settings content START -->
+					<div class="tab-pane" id="tab-5">
+						<div class="card shadow">
+							<!-- Card header -->
+							<div class="card-header border-bottom d-sm-flex justify-content-between align-items-center">
+								<h5 class="card-header-title mb-0">شبکه های اجتماعی</h5>
+								<a href="#" class="btn btn-sm btn-primary mb-0">افزودن</a>
+							</div>
+							<!-- Card body START -->
+							<div class="card-body">
+								<form class="row g-4">
+									<!-- Input item -->
+									<div class="col-sm-6">
+										<label class="form-label"><i class="fab fa-google text-google-icon me-2"></i>اکانت google</label>
+										<input class="form-control" type="text">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-sm-6">
+										<label class="form-label"><i class="fab fa-google text-google-icon me-2"></i>google API</label>
+										<input class="form-control" type="text">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-sm-6">
+										<label class="form-label"><i class="fab fa-facebook text-facebook me-2"></i>اکانت facebook</label>
+										<input class="form-control" type="text">
+									</div>
+	
+									<!-- Input item -->
+									<div class="col-sm-6">
+										<label class="form-label"><i class="fab fa-facebook text-facebook me-2"></i>facebook API</label>
+										<input class="form-control" type="text">
+									</div>
+
+									<!-- Note -->
+									<p class="mb-0">طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد: <u class="text-primary">https://app.eduport.abc/google/callback</u></p>
+	
+									<!-- Button -->
+									<div class="d-flex justify-content-end">
+										<button type="button" class="btn btn-primary mb-0">ذخیره</button>
+									</div>
+								</form>
+							</div>
+							<!-- Card body END -->
+						</div>
+					</div>
+					<!-- Social Settings content END -->
+
+					<!-- Email Settings content START -->
+					<div class="tab-pane" id="tab-6">
+						<div class="card shadow">
+
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title mb-0">ایمیل</h5>
+							</div>
+
+							<!-- Card body START -->
+							<div class="card-body">
+								<div class="row g-4">
+
+									<!-- Radio group items -->
+									<div class="col-xl-8">
+										<label class="form-label">انتخاب ایمیل</label>
+										<div class="d-sm-flex justify-content-sm-between align-items-center">
+											<!-- Radio -->
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioEmail" id="flexRadioEmail1">
+												<label class="form-check-label" for="flexRadioEmail1">Chat</label>
+											</div>
+
+											<!-- Radio -->
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioEmail" id="flexRadioEmail2" checked>
+												<label class="form-check-label" for="flexRadioEmail2">SMTP</label>
+											</div>
+
+											<!-- Radio -->
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioEmail" id="flexRadioEmail3">
+												<label class="form-check-label" for="flexRadioEmail3">Gmail</label>
+											</div>
+										</div>
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">سرویس میزبانی SMTP</label>
+										<input type="text" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6 col-xl-3">
+										<label class="form-label">پورت SMTP</label>
+										<input type="text" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6 col-xl-3">
+										<label class="form-label">SMTP امن</label>
+										<input type="text" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">نام کاربری SMTP</label>
+										<input type="text" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">رمز SMTP</label>
+										<input type="password" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">ایمیل فرستنده</label>
+										<input type="email" class="form-control">
+									</div>
+
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">نام فرستنده</label>
+										<input type="email" class="form-control">
+									</div>
+
+									<!-- Choice item -->
+									<div class="col-lg-6">
+										<label class="form-label">انتخاب گروه</label>
+										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
+											<option value="">ارسال ایمیل به</option>
+											<option>مدیران</option>
+											<option>مربیان</option>
+											<option>هنرجویان</option>
+											<option>بازدیدکنندگان</option>
+										</select>
+									</div>
+									
+									<!-- Input item -->
+									<div class="col-md-6">
+										<label class="form-label">ایمیل گیرنده</label>
+										<input type="email" class="form-control">
+									</div>
+								</div>	
+
+								<!-- Email Template -->
+								<div class="row g-4 mt-4">
+									<div class="d-sm-flex justify-content-between align-items-center">
+										<h5 class="mb-0">ویرایش قالب ایمیل</h5>
+										<a href="#" class="btn btn-sm btn-primary mb-0">افزودن قالب</a>
+									</div>
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل خوش آمدگویی</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ارسال ایمیل برای کاربران</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">تغییر رمز عبور</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل ورود</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">تغییر رمز توسط ادمین</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل تاییدیه</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل عدم تایید</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل ارسال نشده</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">ایمیل تبلیغاتی</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">خرید رمز - لغو توسط کاربر</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">خرید رمز - ثبت سفارش</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+					
+									<!-- Template Item -->
+									<div class="col-md-6 col-xxl-4">
+										<div class="bg-light rounded-3 d-flex justify-content-between align-items-center p-2">
+											<h6 class="mb-0 fw-normal"><a href="#">خرید رمز - برداشت وجه</a></h6>
+											<a href="#" class="btn btn-sm btn-round btn-dark flex-shrink-0 mb-0"><i class="far fa-edit fa-fw"></i></a>
+										</div>
+									</div>
+
+									<!-- Button -->
+									<div class="d-flex justify-content-end">
+										<button type="button" class="btn btn-primary mb-0">ذخیره</button>
+									</div>
+								</div>
+							</div>
+							<!-- Card body END -->
+						</div>
+					</div>
+					<!-- Email Settings content END -->
+
+				</div>
+				<!-- Tab Content END -->
+			</div>
+			<!-- Right side END -->
+		</div> <!-- Row END -->		
+	</div>
+	<!-- Page main content END -->
+</div>
+<!-- Page content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Popup modal for Change Password START -->
+<div class="modal fade" id="changePassword" tabindex="-1" aria-labelledby="changePasswordLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- Modal header -->
+			<div class="modal-header bg-dark">
+				<h5 class="modal-title text-white" id="changePasswordLabel">تغییر رمز عبور</h5>
+				<button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<form class="row">
+
+					<p class="mb-2">رمز عبور شما منقضی شده است، لطفا یک رمز عبور جدید انتخاب کنید</p>
+					<!-- Input item -->
+					<div class="col-12">
+						<label class="form-label">رمز قدیمی <span class="text-danger">*</span></label>
+						<input type="Password" class="form-control" placeholder="********">
+					</div>
+					
+					<p class="mb-2 mt-4">رمز عبور شما باید حداقل 8 کاراکتر باشد و نباید دارای فاصله باشد.</p>
+					<!-- Input item -->
+					<div class="col-12 mb-3">
+						<label class="form-label">رمز جدید <span class="text-danger">*</span></label>
+						<input type="password" class="form-control" placeholder="********">
+					</div>
+
+					<!-- Input item -->
+					<div class="col-12">
+						<label class="form-label">تایید رمز جدید <span class="text-danger">*</span></label>
+						<input type="password" class="form-control" placeholder="********">
+					</div>
+				</form>
+			</div>
+
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">بستن</button>
+				<button type="button" class="btn btn-success my-0">تغییر رمز</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Popup modal for Change Password END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="assets/vendor/apexcharts/js/apexcharts.min.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+
+
+<!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/admin-setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Jan 2025 11:13:07 GMT -->
+</html>

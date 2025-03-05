@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+
+<!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/instructor-create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Jan 2025 11:12:50 GMT -->
+<head>
+	<title>قالب آموزشگاهی آنید</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="">
+	<meta name="description" content="قالب آموزشگاهی آنید">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="navbar-light navbar-sticky header-static">
+	<!-- Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container-fluid px-3 px-xl-5">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo-light.png" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-dark.png" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+
+				<!-- Nav category menu START -->
+				<ul class="navbar-nav navbar-nav-scroll me-auto">
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item dropdown dropdown-menu-shadow-stacked">
+						<a class="nav-link bg-primary bg-opacity-10 rounded-3 text-primary px-3 py-3 py-xl-0" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-ui-radios-grid me-2"></i><span>دسته بندی</span></a>
+						<ul class="dropdown-menu" aria-labelledby="categoryMenu">
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">برنامه نویسی</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<!-- dropdown submenu open right -->
+									<li class="dropdown-submenu dropend">
+										<a class="dropdown-item dropdown-toggle" href="#">طراحی وب</a>
+										<ul class="dropdown-menu" data-bs-popper="none">
+											<li> <a class="dropdown-item" href="#">CSS</a> </li>
+											<li> <a class="dropdown-item" href="#">JavaScript</a> </li>
+											<li> <a class="dropdown-item" href="#">Angular</a> </li>
+											<li> <a class="dropdown-item" href="#">PHP</a> </li>
+											<li> <a class="dropdown-item" href="#">HTML</a> </li>
+											<li> <a class="dropdown-item" href="#">React</a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">بانک های اطلاعاتی</a> </li>
+									<li> <a class="dropdown-item" href="#">برنامه نویسی موبایل</a> </li>
+									<li> <a class="dropdown-item" href="#">برنامه نویسی وب</a> </li>
+									<li> <a class="dropdown-item" href="#">سیستم عامل</a> </li>
+									<li> <a class="dropdown-item" href="#">مهندسی نرم افزار</a> </li>
+									<li> <a class="dropdown-item" href="#">مدیریت پروژه</a> </li>
+								</ul>
+							</li>
+							<li> <a class="dropdown-item" href="#">طراحی وب</a></li>
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">دیجیتال مارکتینگ</a>
+								<div class="dropdown-menu dropdown-menu-start dropdown-width-lg" data-bs-popper="none">
+									<div class="row p-4">
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4 mb-4 mb-xl-0">
+											<h6 class="mb-0">دسته بندی ها</h6>
+											<hr> <!-- Divider -->
+											<ul class="list-unstyled">
+												<li> <a class="dropdown-item" href="#">اینستاگرام مارکتینگ</a> </li>
+												<li> <a class="dropdown-item" href="#">تبلیغ نویسی</a> </li>
+												<li> <a class="dropdown-item" href="#">سرچ کنسول</a> </li>
+												<li> <a class="dropdown-item" href="#">جذب ترافیک موثر</a> </li>
+												<li> <a class="dropdown-item" href="#">افزایش فروش</a> </li>
+												<li> <a class="dropdown-item" href="#">ویدیو مارکتینگ</a> </li>
+												<li> <a class="dropdown-item" href="#">آموزش GTmetrix</a> </li>
+												<li> <a class="dropdown-item" href="#">آموزش Alex</a> </li>
+												<li> <a class="dropdown-item" href="#">استراتژی تولید محتوا</a> </li>
+												<li> <a class="dropdown-item" href="#">سئو و بهینه سازی</a> </li>
+												<li> <a class="dropdown-item" href="#">اصول قرارداد نویسی</a> </li>
+											</ul>
+										</div>
+
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4 mb-4 mb-xl-0">
+											<h6 class="mb-0">درجه بندی مدرک</h6>
+											<hr> <!-- Divider -->
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-01.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدرک بین المللی سطح مبتدی</a>
+													<p class="mb-0 small">لیسانس کامپیوتر</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-02.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدرک بین المللی سطح متوسط</a>
+													<p class="mb-0 small">کارشناسی ارشد علوم کامپیوتر</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-03.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدرک بین المللی  زبـان</a>
+													<p class="mb-0 small">دانشکده علوم پزشکی</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<img src="assets/images/client/uni-logo-01.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدرک بین المللی زبـان</a>
+													<p class="mb-0 small">لیسانس کامپیوتر</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex position-relative">
+												<img src="assets/images/client/uni-logo-04.svg" class="icon-md" alt="">
+												<div class="ms-3">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدرک بین المللی سطح پیشرفته</a>
+													<p class="mb-0 small">کارشناسی ارشد توسعه کسب و کار دیجیتالی</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Dropdown column item -->
+										<div class="col-xl-6 col-xxl-4">
+											<h6 class="mb-0">در حـال ثبت نام</h6>
+											<hr> <!-- Divider -->
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-google text-google-icon"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">گواهی سئو گوگل</a>
+													<p class="mb-0 small">بدون پیش نیاز</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-linkedin-in text-linkedin"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">مدیر توسعه کسب و کار (BDE)</a>
+													<p class="mb-0 small">بدون پیش نیاز</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fab fa-fw fa-facebook text-facebook"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">بازاریابی شبکه های اجتماعی فیس بوک</a>
+													<p class="mb-0 small">مشاوره تخصصی</p>
+												</div>
+											</div>
+											<!-- Dropdown item -->
+											<div class="d-flex mb-4 position-relative">
+												<h2 class="mb-0"><i class="fas fa-fw fa-basketball-ball text-dribbble"></i></h2>
+												<div class="ms-2">
+													<a class="stretched-link h6 mb-0 fw-normal" href="#">طراحی گرافیکی خلاقانه</a>
+													<p class="mb-0 small">بدون پیش نیاز</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Advertisement -->
+									<div class="row">
+										<div class="col-12">
+											<div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden" style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
+												<!-- SVG decoration -->
+												<figure class="position-absolute bottom-0 end-0 mb-n4 d-none d-md-block">
+													<svg width="92.6px" height="135.2px">	
+														<path class="fill-white" d="M71.5,131.4c0.2,0.1,0.4,0.1,0.6-0.1c0,0,0.6-0.7,1.6-1.9c0.2-0.2,0.1-0.5-0.1-0.7c-0.2-0.2-0.5-0.1-0.7,0.1 c-1,1.2-1.6,1.8-1.6,1.8c-0.2,0.2-0.2,0.5,0,0.7C71.4,131.3,71.4,131.4,71.5,131.4z"></path>
+														<path class="fill-white" d="M76,125.5c-0.2-0.2-0.3-0.5-0.1-0.7c1-1.4,1.9-2.8,2.8-4.2c0.1-0.2,0.4-0.3,0.7-0.2c0.2,0.1,0.3,0.4,0.2,0.7 c-0.9,1.4-1.8,2.9-2.8,4.2C76.6,125.6,76.3,125.6,76,125.5C76.1,125.5,76.1,125.5,76,125.5z M81.4,116.9 c-0.2-0.1-0.3-0.4-0.2-0.7c0.2-0.5,0.5-0.9,0.7-1.4c0.5-1.1,1-2.1,1.5-3.2c0.1-0.3,0.4-0.4,0.6-0.3c0.3,0.1,0.4,0.4,0.3,0.6 c-0.5,1.1-1,2.1-1.5,3.2c-0.2,0.5-0.5,0.9-0.7,1.4C81.9,117,81.6,117,81.4,116.9C81.4,116.9,81.4,116.9,81.4,116.9z M85.1,107.1 c0.5-1.6,1-3.2,1.3-4.8c0.1-0.3,0.3-0.4,0.6-0.4c0.3,0.1,0.4,0.3,0.4,0.6c-0.4,1.6-0.8,3.3-1.3,4.9c-0.1,0.3-0.4,0.4-0.6,0.3 c0,0,0,0-0.1,0C85.1,107.6,85,107.3,85.1,107.1z M47.3,83c-1.5-1.1-2.5-2.5-3.1-4.2c-0.1-0.3,0-0.5,0.3-0.6 c0.3-0.1,0.5,0,0.6,0.3c0.5,1.5,1.5,2.7,2.8,3.7c0.2,0.2,0.3,0.5,0.1,0.7C47.9,83.1,47.6,83.1,47.3,83C47.4,83,47.4,83,47.3,83z  M51.7,84.6c0-0.3,0.3-0.5,0.5-0.4c1.4,0.2,2.9-0.3,4.3-1.4c0.2-0.2,0.5-0.1,0.7,0.1c0.2,0.2,0.1,0.5-0.1,0.7 c-1.6,1.2-3.4,1.8-5,1.6c-0.1,0-0.1,0-0.2,0C51.8,85,51.7,84.8,51.7,84.6z M87.2,97.4c0.2-1.7,0.2-3.3,0.2-5 c0-0.3,0.2-0.5,0.5-0.5c0.3,0,0.5,0.2,0.5,0.5c0.1,1.7,0,3.4-0.2,5.1c0,0.3-0.3,0.5-0.5,0.4c-0.1,0-0.1,0-0.2,0 C87.3,97.8,87.1,97.6,87.2,97.4z M43.7,73.6c0.2-1.6,0.7-3.2,1.5-4.8l0.1-0.1c0.1-0.2,0.4-0.3,0.7-0.2c0,0,0,0,0,0 c0.2,0.1,0.3,0.4,0.2,0.7l-0.1,0.1c-0.7,1.5-1.2,3-1.4,4.5c0,0.3-0.3,0.5-0.6,0.4c-0.1,0-0.1,0-0.2,0 C43.8,74,43.7,73.8,43.7,73.6z M60,79.8c-0.2-0.1-0.3-0.5-0.1-0.7c0.4-0.6,0.8-1.3,1.1-2c0.4-0.8,0.7-1.6,1-2.4 c0.1-0.3,0.4-0.4,0.6-0.3c0.3,0.1,0.4,0.4,0.3,0.6c-0.3,0.9-0.7,1.7-1.1,2.5c-0.4,0.7-0.8,1.4-1.2,2.1C60.5,79.9,60.2,80,60,79.8 C60,79.9,60,79.8,60,79.8z M86.8,87.5c-0.3-1.6-0.7-3.2-1.2-4.8c-0.1-0.3,0.1-0.5,0.3-0.6c0.3-0.1,0.5,0.1,0.6,0.3 c0.5,1.6,1,3.3,1.2,4.9c0,0.3-0.1,0.5-0.4,0.6c-0.1,0-0.2,0-0.3,0C87,87.7,86.9,87.6,86.8,87.5z M48.2,65.1 c-0.2-0.2-0.2-0.5,0-0.7c1.2-1.3,2.5-2.4,3.9-3.4c0.2-0.1,0.5-0.1,0.7,0.1c0.1,0.2,0.1,0.5-0.1,0.7c-1.4,0.9-2.6,2-3.7,3.2 c-0.2,0.2-0.4,0.2-0.6,0.1C48.3,65.2,48.3,65.1,48.2,65.1z M63.3,70c0.3-1.6,0.5-3.3,0.5-4.9c0-0.3,0.2-0.5,0.5-0.5 c0.3,0,0.5,0.2,0.5,0.5c-0.1,1.7-0.2,3.4-0.5,5.1c0,0.3-0.3,0.4-0.6,0.4c0,0-0.1,0-0.1,0C63.3,70.4,63.2,70.2,63.3,70z M83.8,78 c-0.7-1.5-1.5-3-2.4-4.3c-0.1-0.2-0.1-0.5,0.1-0.7c0.2-0.1,0.5-0.1,0.7,0.2c0.9,1.4,1.7,2.9,2.5,4.4c0.1,0.2,0,0.5-0.2,0.7 c-0.1,0.1-0.3,0.1-0.4,0C83.9,78.2,83.8,78.1,83.8,78z M56.5,59.6c-0.1-0.3,0.1-0.5,0.4-0.6c1.7-0.4,3.4-0.5,5.2-0.3 c0.3,0,0.5,0.3,0.4,0.5c0,0.3-0.3,0.5-0.5,0.4c-1.7-0.2-3.3-0.1-4.8,0.3c-0.1,0-0.2,0-0.3,0C56.6,59.8,56.5,59.7,56.5,59.6z  M78.4,69.7c-1.1-1.3-2.2-2.5-3.4-3.6c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0c1.2,1.1,2.4,2.4,3.5,3.7 c0.2,0.2,0.1,0.5-0.1,0.7c-0.2,0.1-0.4,0.1-0.5,0.1C78.5,69.8,78.4,69.7,78.4,69.7z M63.6,60.1c-0.2-1.6-0.4-3.3-0.8-4.9 c-0.1-0.3,0.1-0.5,0.4-0.6c0.3-0.1,0.5,0.1,0.6,0.4c0.4,1.7,0.7,3.4,0.8,5c0,0.3-0.2,0.5-0.4,0.5c-0.1,0-0.2,0-0.3,0 C63.7,60.4,63.6,60.2,63.6,60.1z M71,63.1c-1.4-0.9-2.9-1.7-4.4-2.3c-0.3-0.1-0.4-0.4-0.3-0.6c0.1-0.3,0.4-0.4,0.6-0.3 c1.5,0.6,3.1,1.4,4.6,2.3c0.2,0.1,0.3,0.5,0.1,0.7C71.6,63.1,71.3,63.2,71,63.1C71.1,63.1,71.1,63.1,71,63.1z M61.3,50.4 c-0.6-1.5-1.3-3-2.1-4.5c-0.1-0.2-0.1-0.5,0.2-0.7c0.2-0.1,0.5-0.1,0.7,0.2c0.9,1.5,1.6,3.1,2.2,4.6c0.1,0.3,0,0.5-0.3,0.6 c-0.1,0.1-0.3,0-0.4,0C61.5,50.6,61.4,50.5,61.3,50.4z M56.5,41.8c-1-1.3-2.1-2.6-3.2-3.8c-0.2-0.2-0.2-0.5,0-0.7 c0.2-0.2,0.5-0.2,0.7,0c1.2,1.3,2.3,2.6,3.3,3.9c0.2,0.2,0.1,0.5-0.1,0.7c-0.2,0.1-0.4,0.1-0.5,0C56.6,41.9,56.5,41.8,56.5,41.8z  M49.7,34.5c-1.2-1.1-2.5-2.1-3.9-3.2c-0.2-0.2-0.3-0.5-0.1-0.7c0.2-0.2,0.5-0.3,0.7-0.1c1.4,1,2.7,2.1,3.9,3.2 c0.2,0.2,0.2,0.5,0,0.7c-0.2,0.2-0.4,0.2-0.6,0.1C49.7,34.6,49.7,34.5,49.7,34.5z M41.7,28.5c-1.4-0.9-2.8-1.8-4.3-2.6 c-0.2-0.1-0.3-0.4-0.2-0.7c0.1-0.2,0.4-0.3,0.7-0.2c1.5,0.8,2.9,1.7,4.3,2.6c0.2,0.1,0.3,0.5,0.1,0.7 C42.2,28.6,42,28.6,41.7,28.5C41.7,28.5,41.7,28.5,41.7,28.5z"></path>
+														<path class="fill-white" d="M30.7,22.6C30.7,22.6,30.7,22.6,30.7,22.6c0,0,0.9,0.4,2.3,1c0.2,0.1,0.5,0,0.7-0.2c0.1-0.2,0-0.5-0.2-0.7 c0,0,0,0,0,0c-1.4-0.7-2.2-1-2.3-1c-0.3-0.1-0.5,0-0.6,0.3C30.3,22.2,30.4,22.5,30.7,22.6z"></path>
+														<path class="fill-warning" d="M22.6,23.6l-1.1-4.1c0,0-11.7-7.5-11.9-7.6c-0.1-0.2-4.9-6.5-4.9-6.5l8.2,3.5l12.2,8.4L22.6,23.6z"></path>
+														<polygon class="fill-warning opacity-6" points="31.2,12.3 4.7,5.4 25.1,17.2"></polygon>
+														<polygon class="fill-warning opacity-6" points="21.5,19.5 15,24.8 4.7,5.4 "></polygon>
+													</svg>
+												</figure>
+												<!-- Body -->
+												<div class="card-body">
+													<!-- Title -->
+													<h5 class="card-title text-white mb-2">دسترسی به 25 هزار دوره آنلاین از 120 موسسه، از امروز شروع کنید!</h5>
+													<p class="text-white text-opacity-75">در اینجا توضیحاتی در مورد ویژگی های برتر ارائه شده است که به کاربران امکان می دهد از مزایایی برخوردار شوند و در هزینه های زیادی صرفه جویی کنند</p>
+													<!-- Button -->
+													<a href="#" class="btn btn-sm btn-dark mb-0">خرید حرفه ای</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li> <a class="dropdown-item" href="#">هوش مصنوعی</a></li>
+							<li> <a class="dropdown-item" href="#">زبان انگلیسی</a></li>
+							<li> <a class="dropdown-item" href="#">فناوری و اطلاعات</a></li>
+							<li> <a class="dropdown-item" href="#">مهندسی نرم افزار</a></li>
+							<li> <a class="dropdown-item" href="#">رباتیک</a></li>
+							<li> <a class="dropdown-item" href="#">نگارش آکادمیک</a></li>
+							<li> <a class="dropdown-item" href="#">علوم انسانی</a></li>
+							<li> <a class="dropdown-item" href="#">ریاضیات</a></li>
+							<li> <hr class="dropdown-divider"></li>
+							<li> <a class="dropdown-item bg-primary text-primary bg-opacity-10 rounded-2 mb-0" href="#">مشاهده همه</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- Nav category menu END -->
+
+				<!-- Nav Main menu START -->
+				<ul class="navbar-nav navbar-nav-scroll me-auto">
+					<!-- Nav item 1 Demos -->
+					<!-- <li class="nav-item dropdown"> -->
+						<a class="nav-link active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحه اصلی</a>
+						<!-- <ul class="dropdown-menu" aria-labelledby="demoMenu">
+							<li> <a class="dropdown-item active" href="index.html">نسخه 1</a></li>
+							<li> <a class="dropdown-item" href="index-2.html">نسخه 2</a></li>
+							<li> <a class="dropdown-item" href="index-3.html">نسخه 3</a></li>
+							<li> <a class="dropdown-item" href="index-4.html">نسخه 4</a></li>
+							<li> <a class="dropdown-item" href="index-5.html">نسخه 5</a></li>
+							<li> <a class="dropdown-item" href="index-6.html">نسخه 6</a></li>
+							<li> <a class="dropdown-item" href="index-7.html">نسخه 7</a></li>
+							<li> <a class="dropdown-item" href="index-8.html">نسخه 8</a></li>
+							<li> <a class="dropdown-item" href="index-9.html">نسخه 9</a><li>
+							<li> <a class="dropdown-item" href="index-10.html">نسخه 10</a></li>
+							<li> <a class="dropdown-item" href="index-11.html">نسخه 11</a></li>
+						</ul>
+					</li> -->
+
+					<!-- Nav item 2 Pages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحات</a>
+						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">دوره ها</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="course-categories.html">دسته بندی</a></li>
+									<li> <hr class="dropdown-divider"></li>
+									<li> <a class="dropdown-item" href="course-grid.html">لیست نسخه 1</a></li>
+									<li> <a class="dropdown-item" href="course-grid-2.html">لیست نسخه 2</a></li>
+									<li> <hr class="dropdown-divider"></li>
+									<li> <a class="dropdown-item" href="course-list.html">لیست نسخه 3</a></li>
+									<li> <a class="dropdown-item" href="course-list-2.html">لیست نسخه 4</a></li>
+									<li> <hr class="dropdown-divider"></li>
+									<li> <a class="dropdown-item" href="course-detail.html">جزئیات نسخه 1</a></li>
+									<li> <a class="dropdown-item" href="course-detail-min.html">جزئیات نسخه 2</a></li>
+									<li> <a class="dropdown-item" href="course-detail-adv.html">جزئیات نسخه 3</a></li>
+									<li> <a class="dropdown-item" href="course-detail-module.html">جزئیات نسخه 4</a></li>
+									<li> <a class="dropdown-item" href="course-video-player.html">جزئیات نسخه 5</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">سایر</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="about.html">درباره ما</a></li>
+									<li> <a class="dropdown-item" href="contact-us.html">تماس با ما</a></li>
+									<li> <a class="dropdown-item" href="blog-grid.html">لیست وبلاگ 1</a></li>
+									<li> <a class="dropdown-item" href="blog-masonry.html">لیست وبلاگ 2</a></li>
+									<li> <a class="dropdown-item" href="blog-detail.html">جزئیات وبلاگ</a></li>
+									<li> <a class="dropdown-item" href="pricing.html">قیمت گذاری</a></li>
+								</ul>
+							</li>
+							<!-- Dropdown submenu -->
+							<!-- <li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">بنرها</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="#">نسخه 1</a></li>
+									<li> <a class="dropdown-item" href="#">نسخه 2</a></li>
+									<li> <p class="dropdown-item mb-0">به زودی</p></li>
+								</ul>
+							</li> -->
+							<li> <a class="dropdown-item" href="instructor-list.html">لیست مدرس</a></li>
+							<li> <a class="dropdown-item" href="instructor-single.html">جزئیات مدرس</a></li>
+							<li> <a class="dropdown-item" href="become-instructor.html">مدرس شوید</a></li>
+							<li> <a class="dropdown-item" href="abroad-single.html">مهاجرت مدرس</a></li>
+							<li> <a class="dropdown-item" href="workshop-detail.html">خرید دوره</a></li>
+							<li> <a class="dropdown-item" href="event-detail.html">رویدادها <span class="badge bg-success ms-2 smaller">جدید</span></a></li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">فروشگاه</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="shop.html">لیست دوره</a></li>
+									<li> <a class="dropdown-item" href="shop-product-detail.html">جزئیات دوره</a></li>
+									<li> <a class="dropdown-item" href="cart.html">سبد خرید</a></li>
+									<li> <a class="dropdown-item" href="checkout.html">تسویه حساب</a></li>
+									<li> <a class="dropdown-item" href="empty-cart.html">سبد خرید خالی</a></li>
+									<li> <a class="dropdown-item" href="wishlist.html">مورد علاقه ها</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">پشتیبانی</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="help-center.html">مرکز پشتیبانی</a></li>
+									<li> <a class="dropdown-item" href="help-center-detail.html">جزئیات</a></li>
+									<li> <a class="dropdown-item" href="faq.html">سوالات متداول</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">احراز هویت</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="sign-in.html">ورود</a></li>
+									<li> <a class="dropdown-item" href="sign-up.html">ثبت نام</a></li>
+									<li> <a class="dropdown-item" href="forgot-password.html">فراموشی رمز عبور</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">فرم</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="request-demo.html">درخواست دوره</a></li>
+									<li> <a class="dropdown-item" href="book-class.html">رزرو آنلاین</a></li>
+									<li> <a class="dropdown-item" href="request-access.html">دسترسی رایگان</a></li>
+									<li> <a class="dropdown-item" href="university-admission-form.html">پذیرش</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">خطا و به زودی</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="error-404.html">صفحه 404</a></li>
+									<li> <a class="dropdown-item" href="coming-soon.html">به زودی</a></li>
+								</ul>
+							</li>
+
+						</ul>
+					</li>
+
+					<!-- Nav item 3 Account -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">داشبورد</a>
+						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>مدرس</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="instructor-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>داشبورد</a> </li>
+									<li> <a class="dropdown-item" href="instructor-manage-course.html"><i class="bi bi-basket-fill fa-fw me-1"></i>لیست دوره ها</a> </li>
+									<!-- <li> <a class="dropdown-item" href="instructor-create-course.html"><i class="bi bi-file-earmark-plus-fill fa-fw me-1"></i>ثبت دوره جدید</a> </li>
+									<li> <a class="dropdown-item" href="course-added.html"><i class="bi bi-file-check-fill fa-fw me-1"></i>دوره اضافه شد!</a> </li> -->
+									<li> <a class="dropdown-item" href="instructor-quiz.html"><i class="bi bi-question-diamond fa-fw me-1"></i>امتحانات</a> </li>
+									<li> <a class="dropdown-item" href="instructor-earning.html"><i class="fas fa-chart-line fa-fw me-1"></i>آنالیز و تحلیل درآمد</a> </li>
+									<li> <a class="dropdown-item" href="instructor-studentlist.html"><i class="fas fa-user-graduate fa-fw me-1"></i>لیست دانشجویان</a> </li>
+									<!-- <li> <a class="dropdown-item" href="instructor-order.html"><i class="bi bi-cart-check-fill fa-fw me-1"></i>لیست سفارشات</a> </li> -->
+									<li> <a class="dropdown-item" href="instructor-review.html"><i class="bi bi-star-fill fa-fw me-1"></i>دیدگاه ها</a> </li>
+									<li> <a class="dropdown-item" href="instructor-payout.html"><i class="fas fa-wallet fa-fw me-1"></i>درآمدها</a> </li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+								<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>دانشجو</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="student-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>داشبورد</a> </li>
+									<li> <a class="dropdown-item" href="student-subscription.html"><i class="bi bi-card-checklist fa-fw me-1"></i>خریدهای من</a> </li>
+									<li> <a class="dropdown-item" href="student-course-list.html"><i class="bi bi-basket-fill fa-fw me-1"></i>لیست دوره ها</a> </li>
+									<li> <a class="dropdown-item" href="student-course-resume.html"><i class="far fa-fw fa-file-alt me-1"></i>رزومه دوره</a> </li>
+									<li> <a class="dropdown-item" href="student-quiz.html"><i class="bi bi-question-diamond fa-fw me-1"></i>امتحانات </a> </li>
+									<li> <a class="dropdown-item" href="student-payment-info.html"><i class="bi bi-credit-card-2-front-fill fa-fw me-1"></i>اطلاعات کارت</a> </li>
+									<li> <a class="dropdown-item" href="student-bookmark.html"><i class="fas bi-cart-check-fill fa-fw me-1"></i>مورد علاقه ها</a> </li>
+								</ul>
+							</li>
+							
+							<!-- <li> <a class="dropdown-item" href="admin-dashboard.html"><i class="fas fa-user-cog fa-fw me-1"></i>مدیریت</a> </li> -->
+							<li> <hr class="dropdown-divider"></li>
+							<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i>ویرایش پروفایل</a> </li>
+							<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>تنظیمات</a> </li>
+							<li> <a class="dropdown-item" href="instructor-delete-account.html"><i class="fas fa-fw fa-trash-alt me-1"></i>حذف پروفایل</a> </li>
+							
+							<li> <hr class="dropdown-divider"></li>
+							<!-- Dropdown Level -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">زیر منو</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+
+									<!-- dropdown submenu open right -->
+									<li class="dropdown-submenu dropend">
+										<a class="dropdown-item dropdown-toggle" href="#">نسخه 1</a>
+										<ul class="dropdown-menu" data-bs-popper="none">
+											<li> <a class="dropdown-item" href="#">عنوان 1</a> </li>
+											<li> <a class="dropdown-item" href="#">عنوان 2</a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">عنوان 3</a> </li>
+
+									<!-- dropdown submenu open left -->
+									<li class="dropdown-submenu dropstart">
+										<a class="dropdown-item dropdown-toggle" href="#">نسخه 2</a>
+										<ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
+											<li> <a class="dropdown-item" href="#">عنوان 1</a> </li>
+											<li> <a class="dropdown-item" href="#">عنوان 2</a> </li>
+										</ul>
+									</li>
+									<li> <a class="dropdown-item" href="#">عنوان 3</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<!-- Nav item 4 Megamenu-->
+					<li class="nav-item dropdown dropdown-fullwidth">
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مگامنو</a>
+						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
+							<div class="row p-4 g-4">
+								<!-- Dropdown column item -->
+								<div class="col-xl-6 col-xxl-3">
+									<h6 class="mb-0">شروع کن</h6>
+									<hr>
+									<ul class="list-unstyled">
+										<li> <a class="dropdown-item" href="#">اینستاگرام مارکتینگ</a> </li>
+										<li> <a class="dropdown-item" href="#">تیبلغ نویسی</a> </li>
+										<li> <a class="dropdown-item" href="#">سرچ کنسول</a> </li>
+										<li> <a class="dropdown-item" href="#">جذب ترافیک موثر</a> </li>
+										<li> <a class="dropdown-item" href="#">افزایش فروش</a> </li>
+										<li> <a class="dropdown-item" href="#">ویدیو مارکتینگ</a> </li>
+										<li> <a class="dropdown-item" href="#">استراتژی تولید محتوا</a> </li>
+										<li> <a class="dropdown-item" href="#">آموزش GTmetrix</a> </li>
+										<li> <a class="dropdown-item" href="#">آموزش َAlex</a> </li>
+										<li> <a class="dropdown-item" href="#">سئو و بهینه سازی</a> </li>
+										<li> <a class="dropdown-item" href="#">اصول قرارداد نویسی</a> </li>
+									</ul>
+								</div>
+								
+								<!-- Dropdown column item -->
+								<div class="col-xl-6 col-xxl-3">
+									<h6 class="mb-0">میزان رتبه</h6>
+									<hr>
+									<!-- Dropdown item -->
+									<div class="mb-2 position-relative bg-primary-soft-hover rounded-2 transition-base p-3">
+										<a class="stretched-link h6 mb-0" href="#">تماس با مدیریت</a>
+										<p class="mb-0 small text-truncate-2">با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+									</div>
+									<!-- Dropdown item -->
+									<div class="mb-2 position-relative bg-primary-soft-hover rounded-2 transition-base p-3">
+										<a class="stretched-link h6 mb-0" href="#">مسیر فروش</a>
+										<p class="mb-0 small text-truncate-2">با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+									</div>
+									<!-- Dropdown item -->
+									<div class="mb-2 position-relative bg-primary-soft-hover rounded-2 transition-base p-3">
+										<a class="stretched-link h6 mb-0" href="#">امنیت و مجوز</a>
+										<p class="mb-0 small text-truncate-2">با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+									</div>
+								</div>
+
+								<!-- Dropdown column item -->
+								<div class="col-xl-6 col-xxl-3">
+									<h6 class="mb-0">مدرک</h6>
+									<hr>
+									<!-- Dropdown item -->
+									<div class="d-flex mb-4 position-relative">
+										<h2 class="mb-0"><i class="fab fa-fw fa-google text-google-icon"></i></h2>
+										<div class="ms-2">
+											<a class="stretched-link h6 mb-0" href="#">گواهی سئو گوگل</a>
+											<p class="mb-0 small">بدون پیش نیاز</p>
+										</div>
+									</div>
+									<!-- Dropdown item -->
+									<div class="d-flex mb-4 position-relative">
+										<h2 class="mb-0"><i class="fab fa-fw fa-linkedin-in text-linkedin"></i></h2>
+										<div class="ms-2">
+											<a class="stretched-link h6 mb-0" href="#">مدیر توسعه کسب و کار (BDE)</a>
+											<p class="mb-0 small">بدون پیش نیاز</p>
+										</div>
+									</div>
+									<!-- Dropdown item -->
+									<div class="d-flex mb-4 position-relative">
+										<h2 class="mb-0"><i class="fab fa-fw fa-facebook text-facebook"></i></h2>
+										<div class="ms-2">
+											<a class="stretched-link h6 mb-0" href="#">بازاریابی شبکه های اجتماعی فیس بوک</a>
+											<p class="mb-0 small">مشاوره تخصصی</p>
+										</div>
+									</div>
+									<!-- Dropdown item -->
+									<div class="d-flex mb-4 position-relative">
+										<h2 class="mb-0"><i class="fas fa-fw fa-basketball-ball text-dribbble"></i></h2>
+										<div class="ms-2">
+											<a class="stretched-link h6 mb-0" href="#">طراحی گرافیکی خلاقانه</a>
+											<p class="mb-0 small">بدون پیش نیاز</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Dropdown column item -->
+								<div class="col-xl-6 col-xxl-3">
+									<h6 class="mb-0">دانلود نرم افزار کاربردی</h6>
+									<hr>
+									<!-- Image -->
+									<img src="assets/images/element/14.svg" alt="">
+
+									<!-- Download button -->
+									<div class="row g-2 justify-content-center mt-3">
+										<!-- Google play store button -->
+										<div class="col-6 col-sm-4 col-xxl-6">
+											<a href="#"> <img src="assets/images/client/google-play.svg" class="btn-transition" alt="google-store"> </a>
+										</div>
+										<!-- App store button -->
+										<div class="col-6 col-sm-4 col-xxl-6">
+											<a href="#"> <img src="assets/images/client/app-store.svg" class="btn-transition" alt="app-store"> </a>
+										</div>
+									</div>
+								</div>
+
+								<!-- Action box -->
+								<div class="col-12">
+									<div class="alert alert-success alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
+										<!-- Avatar -->
+										<div class="avatar avatar-xs me-2">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+										</div>
+										<!-- Info -->
+										کلاس رشد شخصیت از دقیقه 14 شروع می شود، همین حالا <a href="#" class="alert-link">ثبت نام</a> کنید
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- Nav item 5 link-->
+					<!-- <li class="nav-item dropdown">
+						<a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-ellipsis-h"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end min-w-auto" data-bs-popper="none">
+							<li> 
+								<a class="dropdown-item" href="#" target="_blank">
+									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>پشتیبانی
+								</a> 
+							</li>
+							<li> 
+								<a class="dropdown-item" href="docs/index.html" target="_blank">
+									<i class="text-danger fa-fw bi bi-card-text me-2"></i>داکیومنت
+								</a> 
+							</li>
+							<li> <hr class="dropdown-divider"></li>
+							<li> 
+								<a class="dropdown-item" href="https://fixdevelopdemo.ir/theme/eduport/ltr/index.html" target="_blank">
+									<i class="text-info fa-fw bi bi-toggle-off me-2"></i>نسخه LTR
+								</a> 
+							</li>
+							<li> 
+								<a class="dropdown-item" href="https://www.rtl-theme.com/" target="_blank">
+									<i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>خرید قالب
+								</a> 
+							</li>
+							<li> <hr class="dropdown-divider"></li>
+							<li> 
+								<a class="dropdown-item" href="docs/alerts.html" target="_blank">
+									<i class="text-orange fa-fw bi bi-puzzle-fill me-2"></i>کدهای کاربردی
+								</a> 
+							</li>
+							<li> 
+								<a class="dropdown-item" href="#">
+								  <i class="text-purple fa-fw bi bi-stickies-fill me-2"></i>اسنیپت ها(Snippets)
+								</a>
+							</li>
+						</ul>
+					</li> -->
+				</ul>
+				<!-- Nav Main menu END -->
+
+				<!-- Nav Search START -->
+				<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+					<div class="nav-item w-100">
+						<form class="position-relative">
+							<input class="form-control pe-5 bg-transparent" type="search" placeholder="جستجو..." aria-label="Search">
+							<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+								<i class="fas fa-search fs-6 "></i>
+							</button>
+						</form>
+					</div>
+				</div>
+				<!-- Nav Search END -->
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Profile START -->
+			<div class="dropdown ms-1 ms-lg-0">
+				<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
+				</a>
+				<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+					<!-- Profile info -->
+					<li class="px-3 mb-3">
+						<div class="d-flex align-items-center">
+							<!-- Avatar -->
+							<div class="avatar me-3">
+								<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
+							</div>
+							<div>
+								<a class="h6" href="#">الهام حسینی</a>
+								<p class="small m-0">example@gmail.com</p>
+							</div>
+						</div>
+					</li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Links -->
+					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>ویرایش</a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>تنظیمات</a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>پشتیبانی</a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Dark mode options START -->
+					<li>
+						<div class="bg-light dark-mode-switch theme-icon-active d-flex align-items-center p-1 rounded mt-2">
+							<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="light">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+									<use href="#"></use>
+								</svg> روشن
+							</button>
+							<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+									<use href="#"></use>
+								</svg> تیره
+							</button>
+							<button type="button" class="btn btn-sm mb-0 active" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+									<use href="#"></use>
+								</svg> خودکار
+							</button>
+						</div>
+					</li> 
+					<!-- Dark mode options END-->
+				</ul>
+			</div>
+			<!-- Profile START -->
+		</div>
+	</nav>
+	<!-- Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Page Banner START -->
+<section class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+	<!-- Main banner background image -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<!-- Title -->
+				<h1 class="text-white">افزودن دوره</h1>
+				<p class="text-white mb-0">لطفا <a href="#" class="text-white"><u>"قبل از افزودن دوره"</u></a> مقاله ما را بخوانید.</p>	
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Page Banner END -->
+
+<!-- =======================
+Steps START -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mx-auto text-center">
+				<!-- Content -->
+				<p class="text-center">از این رابط برای اضافه کردن یک دوره جدید به پورتال استفاده کنید. پس از اتمام افزودن مورد، از نظر کیفیت بررسی می شود. در صورت تایید، دوره شما برای فروش ظاهر می شود و از طریق ایمیل به شما اطلاع داده می شود که دوره شما پذیرفته شده است.</p>
+			</div>
+		</div>
+
+		<div class="card bg-transparent border rounded-3 mb-5">
+			<div id="stepper" class="bs-stepper stepper-outline">
+				<!-- Card header -->
+				<div class="card-header bg-light border-bottom px-lg-5">
+					<!-- Step Buttons START -->
+					<div class="bs-stepper-header" role="tablist">
+						<!-- Step 1 -->
+						<div class="step" data-target="#step-1">
+							<div class="d-grid text-center align-items-center">
+								<button type="button" class="btn btn-link step-trigger mb-0" role="tab" id="steppertrigger1" aria-controls="step-1">
+									<span class="bs-stepper-circle">1</span>
+								</button>
+								<h6 class="bs-stepper-label d-none d-md-block">جزئیات دوره</h6>
+							</div>
+						</div>
+						<div class="line"></div>
+
+						<!-- Step 2 -->
+						<div class="step" data-target="#step-2">
+							<div class="d-grid text-center align-items-center">
+								<button type="button" class="btn btn-link step-trigger mb-0" role="tab" id="steppertrigger2" aria-controls="step-2">
+									<span class="bs-stepper-circle">2</span>
+								</button>
+								<h6 class="bs-stepper-label d-none d-md-block">رسانه</h6>
+							</div>
+						</div>
+						<div class="line"></div>
+
+						<!-- Step 3 -->
+						<div class="step" data-target="#step-3">
+							<div class="d-grid text-center align-items-center">
+								<button type="button" class="btn btn-link step-trigger mb-0" role="tab" id="steppertrigger3" aria-controls="step-3">
+									<span class="bs-stepper-circle">3</span>
+								</button>
+								<h6 class="bs-stepper-label d-none d-md-block">جلسات دوره </h6>
+							</div>
+						</div>
+						<div class="line"></div>
+
+						<!-- Step 4 -->
+						<div class="step" data-target="#step-4">
+							<div class="d-grid text-center align-items-center">
+								<button type="button" class="btn btn-link step-trigger mb-0" role="tab" id="steppertrigger4" aria-controls="step-4">
+									<span class="bs-stepper-circle">4</span>
+								</button>
+								<h6 class="bs-stepper-label d-none d-md-block">اطلاعات تکمیلی</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Step Buttons END -->
+				</div>
+
+				<!-- Card body START -->
+				<div class="card-body">
+					<!-- Step content START -->
+					<div class="bs-stepper-content">
+						<form onsubmit="return false">
+
+							<!-- Step 1 content START -->
+							<div id="step-1" role="tabpanel" class="content fade" aria-labelledby="steppertrigger1">
+								<!-- Title -->
+								<h4 class="fs-5 ff-vb">جزئیات دوره</h4>
+
+								<hr> <!-- Divider -->
+
+								<!-- Basic information START -->
+								<div class="row g-4">
+									<!-- Course title -->
+									<div class="col-12">
+										<label class="form-label">عنوان</label>
+										<input class="form-control" type="text" placeholder="آموزش ساخت وب سایت خبری">
+									</div>
+
+									<!-- Short description -->
+									<div class="col-12">
+										<label class="form-label">توضیحات کوتاه</label>
+										<textarea class="form-control" rows="2" placeholder="کلمات کلیدی"></textarea>
+									</div>
+
+									<!-- Course category -->
+									<div class="col-md-6">
+										<label class="form-label">دسته بندی</label>
+										<select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true">
+											<option value="">انتخاب</option>
+											<option>مهندسی</option>
+											<option>پزشکی</option>
+											<option>طراحی وب</option>
+											<option>حسابداری</option>
+											<option>برنامه نویسی</option>
+										</select>
+									</div>
+
+									<!-- Course level -->
+									<div class="col-md-6">
+										<label class="form-label">سطح دوره</label>
+										<select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="false" data-remove-item-button="true">
+											<option value="">انتخاب سطح</option>
+											<option>همه</option>
+											<option>مقدماتی</option>
+											<option>متوسطه</option>
+											<option>پیشرفته</option>
+										</select>
+									</div>
+
+									<!-- Language -->
+									<div class="col-md-6">
+										<label class="form-label">زبان</label>
+										<select class="form-select js-choice border-0 z-index-9 bg-transparent" multiple="multiple" aria-label=".form-select-sm" data-max-item-count="3" data-remove-item-button="true">
+											<option value="">انتخاب زبان</option>
+											<option>انگلیسی</option>
+											<option>آلمانی</option>
+											<option>فرانسوی</option>
+											<option>فارسی</option>
+										</select>
+									</div>
+
+									<!-- Switch -->
+									<div class="col-md-6 d-flex align-items-center justify-content-start mt-5">
+										<div class="form-check form-switch form-check-md">
+											<input class="form-check-input" type="checkbox" id="checkPrivacy1">
+											<label class="form-check-label" for="checkPrivacy1">دوره ویژه</label>
+										</div>
+									</div>
+
+									<!-- Course time -->
+									<div class="col-md-6">
+										<label class="form-label">مدت زمان دوره</label>
+										<input class="form-control" type="text" placeholder="4:33:00">
+									</div>
+
+									<!-- Total lecture -->
+									<div class="col-md-6">
+										<label class="form-label">تعداد ویدیوها</label>
+										<input class="form-control" type="text" placeholder="19 ویدیو">
+									</div>
+
+									<!-- Course price -->
+									<div class="col-md-6">
+										<label class="form-label">قیمت</label>
+										<input type="text" class="form-control" placeholder="90,000 تومان">
+									</div>
+
+									<!-- Course discount -->
+									<div class="col-md-6">
+										<label class="form-label">تخفیف</label>
+										<input class="form-control" type="text" placeholder="50%">
+										<div class="col-12 mt-1 mb-0">
+											<div class="form-check small mb-0">
+												<input class="form-check-input" type="checkbox" id="checkBox1">
+												<label class="form-check-label" for="checkBox1">
+													فعالسازی تخفیف
+												</label>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Course description -->
+									<div class="col-12">
+										<label class="form-label">توضیحات</label>
+										<!-- Editor toolbar -->
+										<div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
+											<span class="ql-formats">
+												<select class="ql-size"></select>
+											</span>
+											<span class="ql-formats">
+												<button class="ql-bold"></button>
+												<button class="ql-italic"></button>
+												<button class="ql-underline"></button>
+												<button class="ql-strike"></button>
+											</span>
+											<span class="ql-formats">
+												<select class="ql-color"></select>
+												<select class="ql-background"></select>
+											</span>
+											<span class="ql-formats">
+												<button class="ql-code-block"></button>
+											</span>
+											<span class="ql-formats">
+												<button class="ql-list" value="ordered"></button>
+												<button class="ql-list" value="bullet"></button>
+												<button class="ql-indent" value="-1"></button>
+												<button class="ql-indent" value="+1"></button>
+											</span>
+											<span class="ql-formats">
+												<button class="ql-link"></button>
+												<button class="ql-image"></button>
+											</span>
+											<span class="ql-formats">
+												<button class="ql-clean"></button>
+											</span>
+										</div>
+
+										<!-- Main toolbar -->
+										<div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor">
+											<br>
+											<h1>آموزش web scraping با Node js (پیشرفته)</h1>
+											<br>
+											<p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+											<br>
+											<p>در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+											<br>
+											<p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
+											<br>
+											<p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+
+											<p>در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+											<br>
+											<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+											<br>
+											<p> کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. </p>
+											<br>
+											<p> در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+
+											<p>برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+											<br>
+											<p>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد. </p>
+											<br>
+											<p> در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+											<br>
+											<p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+										</div>
+									</div>	
+
+									<!-- Step 1 button -->
+									<div class="d-flex justify-content-end mt-3">
+										<button class="btn btn-primary next-btn mb-0">مرحله بعد</button>
+									</div>
+								</div>
+								<!-- Basic information START -->
+							</div>
+							<!-- Step 1 content END -->
+
+							<!-- Step 2 content START -->
+							<div id="step-2" role="tabpanel" class="content fade" aria-labelledby="steppertrigger2">
+								<!-- Title -->
+								<h4 class="fs-5 ff-vb">رسانه</h4>
+
+								<hr> <!-- Divider -->
+
+								<div class="row">
+									<!-- Upload image START -->
+									<div class="col-12">
+										<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
+											<!-- Image -->
+											<img src="assets/images/element/gallery.svg" class="h-50px" alt="">
+											<div>
+												<h6 class="my-2">آپلود ویدیو، عکس یـا<a href="#!" class="text-primary"> سیستم</a></h6>
+												<label>
+													<span> 
+														<div class="input-group">
+                                                <input type="text" class="form-control stretched-link upload-name border-end-0" name="my-image" id="image" accept="image/gif, image/jpeg, image/png"/>
+                                                <span class="btn btn btn-secondary-soft cursor-pointer upload-button border-start-0">آپلود فایل</span>
+                                        </div> 
+                                        <input type="file" class="d-none hidden-upload"/>
+													</span>
+												</label>
+													<p class="small mb-0 mt-2"><b>توجه: </b> فقط JPG، JPEG و PNG. ابعاد پیشنهادی ما 600px * 450px است. تصویر بزرگتر به اندازه 4:3 برش داده می شود تا با تصاویر کوچک/پیش نمایش ما مطابقت داشته باشد.</p>
+											</div>	
+										</div>
+
+										<!-- Button -->
+										<div class="d-sm-flex justify-content-end mt-2">
+											<button type="button" class="btn btn-sm btn-danger-soft mb-3">حذف</button>
+										</div>
+									</div>
+									<!-- Upload image END -->
+
+									<!-- Upload video START -->
+									<div class="col-12">
+										<h5>آپلود ویدیو</h5>
+										<!-- Input -->
+										<div class="col-12 mt-4 mb-5">
+											<label class="form-label">آدرس ویدیو</label>
+											<input class="form-control" type="text" placeholder="https://www.aparat.com/video/video/embed/videohash/TyGZt/vt/frame">
+										</div>
+										<div class="position-relative my-4">
+											<hr>
+											<p class="small position-absolute top-50 start-50 translate-middle bg-body px-3 mb-0">یـا</p>
+										</div>
+
+										<div class="col-12">
+											<label class="form-label">آپلود ویدیو</label>
+										
+											<div class="input-group mb-3">
+											<label class="input-group-text" dir="ltr">.mp4</label>
+                                                <input type="text" class="form-control upload-name-mp4 border-end-0" id="inputGroupFile01"/>
+                                                <span class="btn btn btn-secondary-soft cursor-pointer upload-button-mp4 border-start-0">آپلود فایل</span>
+												
+                                        </div> 
+                                        <input type="file" class="d-none hidden-upload-mp4"/>	
+											
+											
+											<div class="input-group mb-3">
+											<label class="input-group-text" dir="ltr">.WebM</label>
+                                                <input type="text" class="form-control upload-name-web border-end-0" id="inputGroupFile02"/>
+                                                <span class="btn btn btn-secondary-soft cursor-pointer upload-button-web border-start-0">آپلود فایل</span>
+												
+                                        </div> 
+                                        <input type="file" class="d-none hidden-upload-web"/>
+											
+											<div class="input-group mb-3">
+											<label class="input-group-text" dir="ltr">.OGG</label>
+                                                <input type="text" class="form-control upload-name-ogg border-end-0" id="inputGroupFile03"/>
+                                                <span class="btn btn btn-secondary-soft cursor-pointer upload-button-ogg border-start-0">آپلود فایل</span>
+												
+                                        </div> 
+                                        <input type="file" class="d-none hidden-upload-ogg"/>
+											
+										</div>
+
+										<!-- Preview -->
+										<h5 class="mt-4">پیشنمایش ویدیو</h5>
+										<div class="position-relative">
+											<!-- Image -->
+											<img src="assets/images/about/04.jpg" class="rounded-4" alt="">
+											<div class="position-absolute top-50 start-50 translate-middle">
+												<!-- Video link -->
+												<a href="https://www.aparat.com/video/video/embed/videohash/31hor/vt/frame" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="video-tour">
+													<i class="fas fa-play"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- Upload video END -->
+
+									<!-- Step 2 button -->
+									<div class="d-flex justify-content-between mt-3">
+										<button class="btn btn-secondary prev-btn mb-0">مرحله قبل</button>
+										<button class="btn btn-primary next-btn mb-0">مرحله بعد</button>
+									</div>
+								</div>
+							</div>
+							<!-- Step 2 content END -->
+
+							<!-- Step 3 content START -->
+							<div id="step-3" role="tabpanel" class="content fade" aria-labelledby="steppertrigger3">
+								<!-- Title -->
+								<h4 class="ff-vb fs-5">جلسات دوره</h4>
+
+								<hr> <!-- Divider -->
+
+								<div class="row">
+									<!-- Add lecture Modal button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
+										<h5 class="mb-2 mb-sm-0">آپلود دوره</h5>
+										<a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addLecture"><i class="bi bi-plus-circle me-2"></i>افزودن دوره</a>
+									</div>
+			
+									<!-- Edit lecture START -->
+									<div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+										<!-- Item START -->
+										<div class="accordion-item mb-3">
+											<h6 class="accordion-header font-base" id="heading-1">
+												<button class="accordion-button fw-bold rounded d-inline-block collapsed d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+													معرفی دوره فتوشاپ 
+												</button>
+											</h6>
+			
+											<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
+												<!-- Topic START -->
+												<div class="accordion-body mt-3">
+													<!-- Video item START -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="position-relative">
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
+															<span class="ms-2 mb-0 h6 fw-light">معرفی دوره</span>
+														</div>
+														<!-- Edit and cancel button -->
+														<div>
+															<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+														</div>
+													</div>
+													<!-- Divider -->
+													<hr>
+													<!-- Video item END -->
+							
+													<!-- Video item START -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="position-relative">
+															<a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
+															<span class="ms-2 mb-0 h6 fw-light">دیجیتال مارکتنیگ چیست؟</span>
+														</div>
+														<!-- Edit and cancel button -->
+														<div>
+															<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+														</div>
+													</div>
+													<!-- Divider -->
+													<hr>
+													<!-- Video item END -->
+			
+													<!-- Add topic -->
+													<a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic"><i class="bi bi-plus-circle me-2"></i>افزودن</a>
+												</div>
+												<!-- Topic END -->
+											</div>
+										</div>
+										<!-- Item END -->
+					
+										<!-- Item START -->
+										<div class="accordion-item mb-3">
+											<h6 class="accordion-header font-base" id="heading-2">
+												<button class="accordion-button fw-bold rounded d-inline-block collapsed d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+													آموزش کار به صورت متوسطه
+												</button>
+											</h6>
+			
+											<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
+												<div class="accordion-body mt-3">
+													<!-- Add topic -->
+													<a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
+														<i class="bi bi-plus-circle me-2"></i>افزودن
+													</a>	
+												</div>
+											</div>
+										</div>
+										<!-- Item END -->
+					
+										<!-- Item START -->
+										<div class="accordion-item mb-3">
+											<h6 class="accordion-header font-base" id="heading-3">
+												<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+													چقدر باید به فروشندگان پیشنهاد بدهم؟ 
+												</button>
+											</h6>
+											<!-- Body -->
+											<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionExample2">
+												<div class="accordion-body mt-3">
+													<!-- Add topic -->
+													<a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
+														<i class="bi bi-plus-circle me-2"></i>افزودن
+													</a>
+												</div>
+											</div>
+										</div>	
+										<!-- Item END -->
+			
+									</div>
+									<!-- Edit lecture END -->
+
+									<!-- Step 3 button -->
+									<div class="d-flex justify-content-between">
+										<button class="btn btn-secondary prev-btn mb-0">مرحله قبل</button>
+										<button class="btn btn-primary next-btn mb-0">مرحله بعد</button>
+									</div>
+								</div>
+							</div>
+							<!-- Step 3 content END -->
+
+							<!-- Step 4 content START -->
+							<div id="step-4" role="tabpanel" class="content fade" aria-labelledby="steppertrigger4">
+								<!-- Title -->
+								<h4 class="fs-5 ff-vb">اطلاعات تکمیلی</h4>
+
+								<hr> <!-- Divider -->
+
+								<div class="row g-4">
+									
+									<!-- Edit faq START -->
+									<div class="col-12">
+										<div class="bg-light border rounded p-2 p-sm-4">
+											<div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
+												<h5 class="mb-2 mb-sm-0">آپلود سوالات متداول</h5>
+												<a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addQuestion"><i class="bi bi-plus-circle me-2"></i>افزودن پرسش</a>
+											</div>
+
+											<div class="row g-4">
+												<div class="col-12">
+													<div class="bg-body p-3 p-sm-4 border rounded">
+														<!-- Item 1 -->
+														<div class="d-sm-flex justify-content-sm-between align-items-center mb-2">
+															<!-- Question -->
+															<h6 class="mb-0">بازاریابی دیجیتال چگونه کار می کند؟</h6>
+															<!-- Button -->
+															<div class="align-middle">
+																<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+																<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+															</div>
+														</div>
+														<!-- Content -->
+														<p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+													</div>
+												</div>
+
+												<div class="col-12">
+													<div class="bg-body p-4 border rounded">
+														<!-- Item 2 -->
+														<div class="d-sm-flex justify-content-sm-between align-items-center mb-2">
+															<!-- Question -->
+															<h6 class="mb-0">بازاریابی دیجیتال چگونه کار می کند؟</h6>
+															<!-- Button -->
+															<div class="align-middle">
+																<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+																<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+															</div>
+														</div>
+														<!-- Content -->
+														<p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+													</div>	
+												</div>
+											</div>
+										</div>	
+									</div>
+									<!-- Edit faq END -->
+
+									<!-- Tags START -->
+									<div class="col-12">
+										<div class="bg-light border rounded p-4">
+											<h5 class="mb-0">برچسب ها</h5>
+											<!-- Comment -->
+											<div class="mt-3">
+												<input type="text" class="form-control js-choice mb-0" data-placeholder="true" data-placeholder-Val="" data-max-item-count="14" data-remove-item-button="true">
+												<span class="small">حداکثر 14 کلمه کلیدی کلمات کلیدی همگی باید با حروف کوچک و با کاما از هم جدا شوند. به عنوان مثال، javascript، react</span>
+											</div>
+										</div>
+									</div>
+									<!-- Tags START -->
+
+									<!-- Reviewer START -->
+									<div class="col-12">
+										<div class="bg-light border rounded p-4">
+											<h5 class="mb-0">ثبت دیدگاه</h5>
+
+											<!-- Comment -->
+											<div class="mt-3">
+												<textarea class="form-control" rows="4" placeholder="دیدگاه خود را ثبت کنید" spellcheck="false"></textarea>
+												<div class="form-check mb-0 mt-2">
+													<input type="checkbox" class="form-check-input" id="exampleCheck1">
+													<label class="form-check-label" for="exampleCheck1">
+														هر تصویر، صدا، یا سایر دارایی‌هایی که کار من نیستند، مجوز مناسبی برای استفاده در پیش‌نمایش فایل یا دوره اصلی دریافت کرده‌اند. به غیر از این موارد، این اثر کاملاً متعلق به من است و من حق کامل فروش آن را در اینجا دارم.
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Reviewer START -->
+
+									<!-- Step 4 button -->
+									<div class="d-md-flex justify-content-between align-items-start mt-4">
+										<button class="btn btn-secondary prev-btn mb-2 mb-md-0">مرحله قبل</button>
+										<button class="btn btn-light me-auto ms-md-2 mb-2 mb-md-0">پیشنمایش دوره</button>
+										<div class="text-md-end">
+											<a href="course-added.html" class="btn btn-success mb-2 mb-sm-0">ثبت دوره</a>
+											<p class="mb-0 small mt-1">پس از کلیک بر روی "ارسال یک دوره"، دوره شما آپلود می شود و به عنوان در انتظار بررسی علامت گذاری می شود.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Step 4 content END -->
+
+						</form>
+					</div>
+				</div>
+				<!-- Card body END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Steps END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="bg-dark p-3">
+	<div class="container">
+		<div class="row align-items-center">
+			<!-- Widget -->
+			<div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+				<!-- Logo START -->
+				<a href="index.html"> <img class="h-20px" src="assets/images/logo-dark.png" alt="logo"> </a>
+			</div>
+			
+			<!-- Widget -->
+			<div class="col-md-4 mb-3 mb-md-0">
+				<div class="text-center text-white">
+					<a href="https://zhavia.ir/" target="_blank" class="text-reset btn-link">طراحی و توسعه یافته توسط آنید</a>
+				</div>
+			</div>
+			<!-- Widget -->
+			<div class="col-md-4">
+				<!-- Rating -->
+				<ul class="list-inline mb-0 text-center text-md-end">
+					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-facebook"></i></a></li>
+					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-instagram"></i></a></li>
+					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-linkedin-in"></i></a></li>
+					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-twitter"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Popup modal for add lecture START -->
+<div class="modal fade" id="addLecture" tabindex="-1" aria-labelledby="addLectureLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addLectureLabel">افزودن ویدیو</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Course name -->
+					<div class="col-12">
+						<label class="form-label">نام ویدیو <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" placeholder="نام ویدیو را وارد کنید">
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">بستن</button>
+        <button type="button" class="btn btn-success my-0">ذخیره</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add lecture END -->
+
+<!-- Popup modal for add topic START -->
+<div class="modal fade" id="addTopic" tabindex="-1" aria-labelledby="addTopicLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addTopicLabel">افزودن دوره</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Topic name -->
+					<div class="col-md-6">
+						<label class="form-label">نام دوره</label>
+						<input class="form-control" type="text" placeholder="نام دوره">
+					</div>
+					<!-- Video link -->
+					<div class="col-md-6">
+						<label class="form-label">لینک ویدیو</label>
+						<input class="form-control" type="text" placeholder="لینک ویدیو">
+					</div>
+					<!-- Description -->
+					<div class="col-12 mt-3">
+						<label class="form-label">توضیحات</label>
+						<textarea class="form-control" rows="4" placeholder="" spellcheck="false"></textarea>
+					</div>
+					<!-- Buttons -->
+					<div class="col-6 mt-3">
+						<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+							<!-- رایگان button -->
+							<input type="radio" class="btn-check" name="options" id="option1" checked="">
+							<label class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0" for="option1">رایگان</label>
+							<!-- Premium button -->
+							<input type="radio" class="btn-check" name="options" id="option2">
+							<label class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0" for="option2">پولی</label>
+						</div>
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">بستن</button>
+        <button type="button" class="btn btn-success my-0">ذخیره</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add topic END -->
+
+<!-- Popup modal for add faq START -->
+<div class="modal fade" id="addQuestion" tabindex="-1" aria-labelledby="addQuestionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addQuestionLabel">افزودن سوال</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Question -->
+					<div class="col-12">
+						<label class="form-label">پرسش</label>
+						<input class="form-control" type="text" placeholder="پرسش خود را ثبت کنید">
+					</div>
+					<!-- Answer -->
+					<div class="col-12 mt-3">
+						<label class="form-label">پاسخ</label>
+						<textarea class="form-control" rows="4" placeholder="پاسخ خود را ثبت کنید" spellcheck="false"></textarea>
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">بستن</button>
+        <button type="button" class="btn btn-success my-0">ذخیره</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add faq END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/quill/js/quill.min.js"></script>
+<script src="assets/vendor/stepper/js/bs-stepper.min.js"></script>
+
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+<script>
+     document.querySelector(".upload-button").onclick = function() {
+	      document.querySelector(".hidden-upload").click(); 
+    };
+
+	   document.querySelector(".hidden-upload").onchange = function() {
+	      document.querySelector(".upload-name").value = event.target.files[0].name;
+	};
+	// Upload File .mp4
+	    document.querySelector(".upload-button-mp4").onclick = function() {
+	      document.querySelector(".hidden-upload-mp4").click(); 
+    };
+
+	   document.querySelector(".hidden-upload-mp4").onchange = function() {
+	      document.querySelector(".upload-name-mp4").value = event.target.files[0].name;
+	};
+	// Upload File .WebM
+	    document.querySelector(".upload-button-web").onclick = function() {
+	      document.querySelector(".hidden-upload-web").click(); 
+    };
+
+	   document.querySelector(".hidden-upload-web").onchange = function() {
+	      document.querySelector(".upload-name-web").value = event.target.files[0].name;
+	};
+	// Upload File .OGG
+	    document.querySelector(".upload-button-ogg").onclick = function() {
+	      document.querySelector(".hidden-upload-ogg").click(); 
+    };
+
+	   document.querySelector(".hidden-upload-ogg").onchange = function() {
+	      document.querySelector(".upload-name-ogg").value = event.target.files[0].name;
+	};
+</script>
+</body>
+
+
+<!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/instructor-create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Jan 2025 11:12:51 GMT -->
+</html>

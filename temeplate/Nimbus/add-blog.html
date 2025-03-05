@@ -1,0 +1,512 @@
+<!DOCTYPE html> 
+<html lang="fa">
+	
+<!-- Mirrored from html.designesia.ir/mentoring/add-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Feb 2025 10:47:55 GMT -->
+<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<title>نمونه قالب تیم طراحی وبسایت آنید</title>
+		
+		<!-- Favicon -->
+		<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+		<!-- Select2 CSS -->
+		<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<div class="header-fixed">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="index.html" class="navbar-brand logo">
+							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index.html" class="menu-logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li class="has-submenu">
+								<a href="index.html">دموها <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="index.html">دمو اصلی</a></li>
+									<li><a href="index-two.html">دمو 2</a></li>
+									<li><a href="index-three.html">دمو 3</a></li>
+									<li><a href="index-four.html">دمو 4</a></li>
+									<li><a href="index-five.html">دمو 5</a></li>
+									<li><a href="index-six.html">دمو 6</a></li>
+									<li><a href="index-seven.html">دمو 7</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu active">
+								<a href="#">مدرس <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="dashboard.html">داشبورد مدرس</a></li>
+									<li><a href="bookings.html">جلسات</a></li>
+									<li><a href="schedule-timings.html">زمانبندی تدریس</a></li>
+									<li><a href="mentee-list.html">لیست دانش آموزان</a></li>
+									<li><a href="profile-mentee.html">پروفایل دانش آموزان</a></li>
+									<li class="has-submenu active">
+										<a href="blog.html">وبلاگ</a>
+										<ul class="submenu">
+											<li><a href="blog.html">وبلاگ</a></li>
+											<li><a href="blog-details.html">پست وبلاگ</a></li>
+											<li class="active"><a href="add-blog.html">اضافه کردن پست</a></li>
+											<li><a href="edit-blog.html">ویرایش پست</a></li>
+										</ul>
+									</li>
+									<li><a href="chat.html">گفتگو</a></li>
+									<li><a href="invoices.html">فاکتورها</a></li>
+									<li><a href="profile-settings.html">تنظیمات پروفایل</a></li>
+									<li><a href="reviews.html">نظرات</a></li>
+									<li><a href="mentor-register.html">ثبت نام مدرس</a></li>
+								</ul>
+							</li>	
+							<li class="has-submenu">
+								<a href="#">دانش آموز <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li class="has-submenu">
+										<a href="#">مدرسان</a>
+										<ul class="submenu">
+											<li><a href="map-grid.html">جدولی با نقشه</a></li>
+											<li><a href="map-list.html">لیست با نقشه</a></li>
+										</ul>
+									</li>
+									<li><a href="search.html">جستجوی مدرس</a></li>
+									<li><a href="profile.html">پروفایل دانش آموز</a></li>
+									<li><a href="bookings-mentee.html">سفارشات</a></li>
+									<li><a href="checkout.html">تسویه</a></li>
+									<li><a href="booking-success.html">رزرو موفقیت آمیز</a></li>
+									<li><a href="dashboard-mentee.html">داشبورد دانش آموز</a></li>
+									<li><a href="favourites.html">علاقمندیها</a></li>
+									<li><a href="chat-mentee.html">گفتگو</a></li>
+									<li><a href="profile-settings-mentee.html">تنظیمات پروفایل</a></li>
+									<li><a href="change-password.html">تغییر رمز عبور</a></li>
+								</ul>
+							</li>	
+							<li class="has-submenu">
+								<a href="#">صفحات <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="voice-call.html">تماس صوتی</a></li>
+									<li><a href="video-call.html">تماس تصویری</a></li>
+									<li><a href="search.html">جستجوی مدرسان</a></li>
+									<li><a href="components.html">عناصر</a></li>
+									<li class="has-submenu">
+										<a href="invoices.html">فاکتورها</a>
+										<ul class="submenu">
+											<li><a href="invoices.html">فاکتورها</a></li>
+											<li><a href="invoice-view.html">مشاهده فاکتور</a></li>
+										</ul>
+									</li>
+									<li><a href="blank-page.html">صفحه خالی</a></li>
+									<li><a href="login.html">ورود</a></li>
+									<li><a href="register.html">ثبت نام</a></li>
+									<li><a href="forgot-password.html">فراموشی رمز عبور</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu">
+								<a href="#">وبلاگ <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="blog-list.html">لیست</a></li>
+									<li><a href="blog-grid.html">جدولی</a></li>
+									<li><a href="blog-details.html">پست وبلاگ</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="admin/index.html" target="_blank">داشبورد ادمین</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">ثبت نام / ورود</a>
+							</li>
+						</ul>		 
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/user/user.jpg" width="31" alt="آزیتا حاجیان">
+								</span>
+							</a>
+							<div class="dropdown-menu">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="assets/img/user/user.jpg" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>متین عزیزپور</h6>
+										<p class="text-muted mb-0">Mentor</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="dashboard.html">داشبورد</a>
+								<a class="dropdown-item" href="profile-settings.html">تنظیمات پروفایل</a>
+								<a class="dropdown-item" href="login.html">خروج</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+
+					</ul>
+				</nav>
+				</div>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">دمو اصلی</a></li>
+									<li class="breadcrumb-item active" aria-current="page">اضافه کردن پست</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">اضافه کردن پست</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+						
+							<!-- Sidebar -->
+							<div class="profile-sidebar">
+								<div class="user-widget">
+									<div class="pro-avatar">JD</div>
+									<div class="rating">
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star"></i>
+									</div>
+									<div class="user-info-cont">
+										<h4 class="usr-name">متین عزیزپور</h4>
+										<p class="mentor-type">ادبیات انگلیسی (هنر)</p>
+									</div>
+								</div>
+								<div class="progress-bar-custom">
+									<h6>تکمیل اطلاعات پروفایل ></h6>
+									<div class="pro-progress">
+									  <div class="tooltip-toggle" tabindex="0"></div>
+									   <div class="tooltip">80%</div>
+									</div>
+								</div>
+								<div class="custom-sidebar-nav">
+									<ul>
+										<li><a href="dashboard.html"><i class="fas fa-home"></i>داشبورد <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="bookings.html"><i class="fas fa-clock"></i>جلسات<span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="schedule-timings.html"><i class="fas fa-hourglass-start"></i>زمانبندی تدریس <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="chat.html"><i class="fas fa-comments"></i>پیام ها <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="invoices.html"><i class="fas fa-file-invoice"></i>فاکتورها <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="reviews.html"><i class="fas fa-eye"></i>نظرات <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="blog.html" class="active"><i class="fab fa-blogger-b"></i>وبلاگ <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="profile.html"><i class="fas fa-user-cog"></i>پروفایل <span><i class="fas fa-chevron-left"></i></span></a></li>
+										<li><a href="login.html"><i class="fas fa-sign-out-alt"></i>خروج <span><i class="fas fa-chevron-left"></i></span></a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- /Sidebar -->
+
+						</div>
+						
+						<div class="col-md-7 col-lg-8 col-xl-9 custom-edit-service">
+							
+							<div class="row">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body">	
+											<h3 class="pb-3">اضافه کردن پست</h3>
+							
+											<form action="https://html.designesia.ir/mentoring/blog.html">
+												<div class="service-fields mb-3">
+													<h4 class="heading-2">اطلاعات خدمات</h4>
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="form-group">
+																<label>عنوان پست <span class="text-danger">*</span></label>
+																<input class="form-control" type="text" value="مطالعه چرتکه برای مبتدی - قسمت اول">
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="service-fields mb-3">
+													<h4 class="heading-2">دسته</h4>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="form-group">
+																<label>دسته <span class="text-danger">*</span></label>
+																<select class="form-control select" name="category"> 
+																	<option value="1">مطالعه چرتکه برای مبتدی - قسمت اول</option>
+																	<option value="2" selected="selected">مطالعه چرتکه برای مبتدی - قسمت دوم</option>
+																	<option value="3">مطالعه چرتکه برای مبتدی - قسمت سوم</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="form-group">
+																<label>زیر مجموعه <span class="text-danger">*</span></label>
+																<select class="form-control select" name="subcategory"> 
+																	<option value="1">مطالعه چرتکه برای مجرب - قسمت اول</option>
+																	<option value="2" selected="selected">مطالعه چرتکه برای با تجربه - قسمت دوم</option>
+																	<option value="3">مطالعه چرتکه برای مجرب - قسمت سوم</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="service-fields mb-3">
+													<h4 class="heading-2">پست وبلاگ</h4>
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="form-group">
+																<label>توضیحات <span class="text-danger">*</span></label>
+																<textarea id="about" class="form-control service-desc" name="about"></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="service-fields mb-3">
+													<h4 class="heading-2">تصویر پست </h4>
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="service-upload">
+																<i class="fas fa-cloud-upload-alt"></i>
+																<span>آپلود تصویر *</span>
+																<input type="file" name="images[]" id="images" multiple="">
+															
+															</div>	
+															<div id="uploadPreview">
+																<ul class="upload-wrap">
+																	<li>
+																		<div class="upload-images">
+
+																			<img alt="" src="assets/img/blog/blog-thumb-01.jpg">
+																		</div>
+																	</li>
+																	<li>
+																		<div class="upload-images">
+
+																			<img alt="" src="assets/img/blog/blog-thumb-02.jpg">
+																		</div>
+																	</li>
+																	<li>
+																		<div class="upload-images">
+
+																			<img alt="" src="assets/img/blog/blog-thumb-03.jpg">
+																		</div>
+																	</li>
+																</ul>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+												<div class="submit-section">
+													<button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">انتشار</button>
+												</div>
+											</form>
+
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="assets/img/logo.png" alt="logo">
+									</div>
+									<div class="footer-about-content">
+										<p>ین یک نوشته آزمایشی است که به طراحان و برنامه نویسان کمک میکند تا این عزیزان با بهره گیری از این نوشته تستی و آزمایشی بتوانند </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">دانش آموزان</h2>
+									<ul>
+										<li><a href="search.html">جستجوی مدرسان</a></li>
+										<li><a href="login.html">ورود</a></li>
+										<li><a href="register.html">ثبت نام</a></li>
+										<li><a href="booking.html">سفارش</a></li>
+										<li><a href="dashboard-mentee.html">داشبورد دانش آموز</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">مدرسان</h2>
+									<ul>
+										<li><a href="appointments.html">سفارشات</a></li>
+										<li><a href="chat.html">گفتگو</a></li>
+										<li><a href="login.html">ورود</a></li>
+										<li><a href="register.html">ثبت نام</a></li>
+										<li><a href="dashboard.html">داشبورد مدرس</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">ارتباط با ما</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> شهرکرد، خیابان کاشانی،<br> نبش کوچه 85 </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											1 315 369 5943
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											info@example.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+				<!-- Footer Bottom -->
+			    <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-12 text-center">
+									<div class="copyright-text">
+										<p class="mb-0">&copy; <span class="footer-date"></span> ANNID. همه حقوق محفوظ است.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Select2 JS -->
+		<script src="assets/plugins/select2/js/select2.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+<!-- Mirrored from html.designesia.ir/mentoring/add-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Feb 2025 10:47:55 GMT -->
+</html>
