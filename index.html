@@ -227,104 +227,49 @@
                 }
             }
         
-   @media (max-width: 768px) {
+  
+@media (max-width: 768px) {
     .nowruz-banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 60px;
-        z-index: 10000;
-        background: url(back.png) center/cover;
-        padding: 0;
-        overflow: visible;
+        padding: 5px 0;
     }
-
-    .nowruz-content {
-        height: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
+    
     .nowruz-text {
-        font-size: 1.4em;
-        transform: translateY(-8px);
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        font-size: 1.5em;
+        padding: 5px 0;
     }
-
+    
     .sabzeh-decoration {
-        position: absolute;
-        left: 10px;
-        bottom: -25px;
-        height: 65px;
-        z-index: 10001;
+        height: 60px;
+        left: 5px;
+        bottom: -10px;
     }
-
+    
     .fish-jar {
-        position: absolute;
-        right: 10px;
-        bottom: -35px;
-        width: 65px;
-        height: 85px;
-        z-index: 10001;
+        width: 80px;
+        height: 100px;
+        right: 5px;
+        bottom: -15px;
+        margin-right: 15px;
     }
-
-    /* استایل هدر اصلی سایت */
-    header {
-        position: fixed;
-        top: 60px !important; /* شروع از پایین بنر */
-        width: 100%;
-        z-index: 9999 !important;
-        transition: none !important;
-    }
-
-    /* ایجاد فاصله برای محتوای اصلی */
-    body {
-        padding-top: 140px !important; /* ارتفاع بنر + هدر + فاصله */
-    }
-
-    /* تنظیمات اضافی برای عناصر هدر */
-    .navbar {
-        margin-top: 0 !important;
-    }
-
-    .header-wrapper {
-        top: 60px !important;
+    
+    .fish {
+        width: 25px;
     }
 }
 
-/* تنظیمات برای موبایل های کوچک */
 @media (max-width: 480px) {
-    .nowruz-banner {
+    .nowruz-text {
+        font-size: 1.2em;
+        padding: 0 30px;
+    }
+    
+    .sabzeh-decoration {
         height: 50px;
     }
-
-    .nowruz-text {
-        font-size: 1.1em;
-        transform: translateY(-5px);
-    }
-
-    .sabzeh-decoration {
-        height: 55px;
-        bottom: -20px;
-        left: 5px;
-    }
-
+    
     .fish-jar {
-        width: 55px;
-        height: 70px;
-        bottom: -25px;
-        right: 5px;
-    }
-
-    header {
-        top: 50px !important;
-    }
-
-    body {
-        padding-top: 120px !important;
+        width: 60px;
+        height: 80px;
     }
 }
 </style>
