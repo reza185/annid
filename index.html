@@ -228,75 +228,76 @@
             }
         
            @media (max-width: 768px) {
-    .nowruz-banner {
-        padding: 10px 0;
-        z-index: 99999;
+    @media (max-width: 768px) {
+        .nowruz-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 9999;
+            padding: 0;
+        }
+
+        .nowruz-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nowruz-text {
+            font-size: 1.6em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sabzeh-decoration {
+            left: 10px;
+            bottom: -10px;
+            height: 60px;
+        }
+
+        .fish-jar {
+            right: 10px;
+            bottom: -15px;
+            width: 60px;
+            height: 80px;
+        }
+
+        .fish {
+            width: 30px;
+        }
+
+        /* ایجاد فاصله برای محتوای سایت فقط در موبایل */
+        body {
+            margin-top: 80px;
+        }
     }
 
-    .nowruz-content {
-        flex-wrap: nowrap;
-        padding: 0 15px;
-        gap: 15px;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 999;
-    }
+    @media (max-width: 480px) {
+        .nowruz-banner {
+            height: 70px;
+        }
 
-    .nowruz-text {
-        font-size: 1.3em;
-        white-space: normal;
-        line-height: 1.3;
-        padding: 0 10px;
-        z-index: 999;
-        flex-shrink: 2;
-        min-width: 50%;
-    }
+        .nowruz-text {
+            font-size: 1.3em;
+        }
 
-    .sabzeh-decoration {
-        height: 60px;
-        order: 1;
-        z-index: 999;
-        margin-right: auto;
-    }
+        .sabzeh-decoration {
+            height: 50px;
+        }
 
-    .fish-jar {
-        width: 50px;
-        height: 70px;
-        order: 3;
-        z-index: 999;
-        margin-left: auto;
-    }
+        .fish-jar {
+            width: 50px;
+            height: 70px;
+        }
 
-    .fish {
-        width: 30px;
-        z-index: 999;
+        body {
+            margin-top: 70px;
+        }
     }
-}
-
-/* نسخه موبایل کوچک */
-@media (max-width: 480px) {
-    .nowruz-content {
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .nowruz-text {
-        font-size: 1.1em;
-        padding: 0 5px;
-    }
-
-    .sabzeh-decoration {
-        height: 50px;
-        margin-right: 5px;
-    }
-
-    .fish-jar {
-        width: 40px;
-        height: 60px;
-        margin-left: 5px;
-    }
-}
-        </style>
+</style>
         </header>
         
         
