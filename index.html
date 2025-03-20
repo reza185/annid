@@ -227,76 +227,96 @@
                 }
             }
         
-           @media (max-width: 768px) {
-    @media (max-width: 768px) {
-        .nowruz-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            z-index: 9999;
-            padding: 0;
-        }
-
-        .nowruz-content {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nowruz-text {
-            font-size: 1.6em;
-            position: relative;
-            z-index: 2;
-        }
-
-        .sabzeh-decoration {
-            left: 10px;
-            bottom: -10px;
-            height: 60px;
-        }
-
-        .fish-jar {
-            right: 10px;
-            bottom: -15px;
-            width: 60px;
-            height: 80px;
-        }
-
-        .fish {
-            width: 30px;
-        }
-
-        /* ایجاد فاصله برای محتوای سایت فقط در موبایل */
-        body {
-            margin-top: 80px;
-        }
+        @media (max-width: 768px) {
+    .nowruz-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px; /* ارتفاع کم شده بنر */
+        padding: 0;
+        z-index: 9997; /* زیر هدر اصلی سایت */
+        background-position: center bottom;
     }
 
-    @media (max-width: 480px) {
-        .nowruz-banner {
-            height: 70px;
-        }
-
-        .nowruz-text {
-            font-size: 1.3em;
-        }
-
-        .sabzeh-decoration {
-            height: 50px;
-        }
-
-        .fish-jar {
-            width: 50px;
-            height: 70px;
-        }
-
-        body {
-            margin-top: 70px;
-        }
+    .nowruz-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
+
+    .nowruz-text {
+        font-size: 1.4em;
+        position: relative;
+        z-index: 2;
+        margin-top: -10px; /* تنظیم موقعیت متن */
+    }
+
+    .sabzeh-decoration {
+        position: absolute;
+        left: 10px;
+        bottom: -15px; /* چسبیدن به پایین بنر */
+        height: 50px;
+        z-index: 3;
+    }
+
+    .fish-jar {
+        position: absolute;
+        right: 10px;
+        bottom: -20px; /* چسبیدن به پایین بنر */
+        width: 50px;
+        height: 70px;
+        z-index: 3;
+    }
+
+    .fish {
+        width: 25px;
+        bottom: 30%;
+    }
+
+    /* ایجاد فاصله برای هدر سایت */
+    body {
+        margin-top: 60px; /* مطابق ارتفاع بنر */
+    }
+
+    /* تنظیمات هدر اصلی */
+    header {
+        top: 60px !important; /* هدر زیر بنر قرار بگیرد */
+        z-index: 9999 !important;
+    }
+}
+
+/* موبایل کوچک */
+@media (max-width: 480px) {
+    .nowruz-banner {
+        height: 50px;
+    }
+
+    .nowruz-text {
+        font-size: 1.1em;
+    }
+
+    .sabzeh-decoration {
+        height: 40px;
+        bottom: -12px;
+    }
+
+    .fish-jar {
+        width: 40px;
+        height: 60px;
+        bottom: -15px;
+    }
+
+    body {
+        margin-top: 50px;
+    }
+
+    header {
+        top: 50px !important;
+    }
+}
 </style>
         </header>
         
