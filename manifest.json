@@ -1,0 +1,29 @@
+{
+  "background_color": "#ffffff",
+  "description": "آنید با تمرکز بر نرم‌افزارهای صنعتی، اپلیکیشن‌های اختصاصی و سیستم‌های مدیریت سازمانی، راهکارهای هوشمند برای شرکت‌ها و کارخانه‌ها ارائه می‌دهد. تحول دیجیتال و بهره‌وری کسب‌وکار شما با آنید آغاز می‌شود.\n\n    ",
+  "dir": "rtl",
+  "display": "standalone",
+  "name": "annid",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "annid",
+  "start_url": "/",
+  "theme_color": "#896EFF",
+  "icons": [
+    {
+      "src": "https://annid.ir/assets/img/logo/faveicon.png",
+      "type": "image/png",
+      "sizes": "250x250",
+      "isSquare": true,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 250,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "9222996545",
+  "lang": "fa"
+}
